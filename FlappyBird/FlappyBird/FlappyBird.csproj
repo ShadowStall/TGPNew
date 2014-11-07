@@ -41,6 +41,9 @@
     <Compile Include="AppMain.cs" />
     <Compile Include="Bird.cs" />
     <Compile Include="Background.cs" />
+    <Compile Include="Bullet.cs" />
+    <Compile Include="Rocket.cs" />
+    <Compile Include="Hud.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -50,6 +53,7 @@
     <Folder Include="shaders\" />
     <Folder Include="textures\" />
     <Folder Include="fonts\" />
+    <Folder Include="textures\HUD\" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Texture.fcg" />
@@ -60,5 +64,10 @@
     <Content Include="textures\bird.png" />
     <Content Include="textures\toppipe.png" />
     <Content Include="textures\background.png" />
+    <Content Include="textures\bullet.png" />
+    <Content Include="textures\player.png" />
+    <Content Include="textures\backgroundV2.png" />
+    <Content Include="textures\rocket.png" />
+    <Content Include="textures\HUD\BulletCounterSymbol.png" />
   </ItemGroup>
 </Project>

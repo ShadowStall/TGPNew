@@ -20,7 +20,7 @@ namespace FlappyBird
 		{
 			sprites	= new SpriteUV[3];
 			
-			textureInfo  		= new TextureInfo("/Application/textures/background.png");
+			textureInfo  		= new TextureInfo("/Application/textures/backgroundV2.png");
 			//Left
 			sprites[0] 			= new SpriteUV(textureInfo);
 			sprites[0].Quad.S 	= textureInfo.TextureSizef;
