@@ -44,6 +44,10 @@
     <Compile Include="Bullet.cs" />
     <Compile Include="Rocket.cs" />
     <Compile Include="Hud.cs" />
+    <Compile Include="Asteroid.cs" />
+    <Compile Include="AsteroidManager.cs" />
+    <Compile Include="TimeManager.cs" />
+    <Compile Include="RandomNumberGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -69,5 +73,9 @@
     <Content Include="textures\backgroundV2.png" />
     <Content Include="textures\rocket.png" />
     <Content Include="textures\HUD\BulletCounterSymbol.png" />
+    <Content Include="textures\player2.png" />
+    <Content Include="textures\bullet2.png" />
+    <Content Include="textures\asteroid.png" />
+    <Content Include="textures\asteroid2.png" />
   </ItemGroup>
 </Project>

@@ -16,7 +16,7 @@ namespace FlappyBird
 	{	
 		private static Sce.PlayStation.HighLevel.GameEngine2D.Scene gameScene;
 		private static Sce.PlayStation.HighLevel.UI.Scene uiScene;
-		private static Sce.PlayStation.HighLevel.UI.Label rocketCount;
+		private static Sce.PlayStation.HighLevel.UI.Label rocketCountLabel;
 		private static Bird	player;
 		private static Background background;
 		private static int rocketAmount = 10;
@@ -24,9 +24,15 @@ namespace FlappyBird
 		private static bool CrossDown = false;
 		//Handles projectiles
 		private static List <Bullet> bulletList;
+		
 		private static List <Rocket> rocketList;
 		//HUD
 		private static Hud _hudSymbolBullets;
+		//Testing asteroid manager
+		private static AsteroidManager asteroidManager;
+		//Testing randomnumber generator
+		
+		
 		public static void Main (string[] args)
 		{
 			Initialize();
@@ -36,11 +42,9 @@ namespace FlappyBird
 			while (!quitGame) 
 			{
 				Update ();
-				
 				Director.Instance.Update();
 				Director.Instance.Render();
 				UISystem.Render();
-				
 				Director.Instance.GL.Context.SwapBuffers();
 				Director.Instance.PostSwap();
 			}
@@ -69,27 +73,25 @@ namespace FlappyBird
 			panel.Width  = Director.Instance.GL.Context.GetViewport().Width;
 			panel.Height = Director.Instance.GL.Context.GetViewport().Height;
 			
-			rocketCount = new Sce.PlayStation.HighLevel.UI.Label();
-			//rocketCount.HorizontalAlignment = HorizontalAlignment.Center;
-			//rocketCount.VerticalAlignment = VerticalAlignment.Top;
-			
-			//Create the HUD
-		
-			//rocketCount.SetPosition(Director.Instance.GL.Context.GetViewport().Width/2 - rocketCount.Width/2,Director.Instance.GL.Context.GetViewport().Height*0.1f - rocketCount.Height/2);
-			rocketCount.SetPosition(40f, 12f);
-			rocketCount.Text = rocketAmount.ToString();
-			
-			panel.AddChildLast(rocketCount);
+			rocketCountLabel = new Sce.PlayStation.HighLevel.UI.Label();
+			rocketCountLabel.SetPosition(40f, 12f);
+			rocketCountLabel.Text = rocketAmount.ToString();
+			panel.AddChildLast(rocketCountLabel);
 			uiScene.RootWidget.AddChildLast(panel);
 			UISystem.SetScene(uiScene);
 			
 			//Create the background.
 			background = new Background(gameScene);
+			//Projectiles
 			bulletList = new List<Bullet>();
 			rocketList = new List<Rocket>();
 			//Create the flappy douche
 			player = new Bird(gameScene);
 			_hudSymbolBullets = new Hud(gameScene);
+		
+			//asteroid manager
+			asteroidManager = new AsteroidManager(gameScene);
+			
 			Director.Instance.RunWithScene(gameScene, true);
 		}
 		
@@ -97,12 +99,18 @@ namespace FlappyBird
 		{
 			
 			PlayerControls();
-
 			player.Update(0.0f);
 			FireBullets(player);
 			FireRocket(player);
+			player.CheckCollision();
+			//asteroidManager.HandleSpawnAsteroid();
+			//SpawnAsteroids();
+			//UpdateAsteroid();
+			asteroidManager.HandleSpawnTest2();
+			asteroidManager.Update();
 			UpdateRockets();
 			UpdateBullets();
+			//Console.WriteLine(player.getX() + " " + player.getY());
 			if(player.Alive)
 			{
 				background.Update(0.0f);				
@@ -111,16 +119,16 @@ namespace FlappyBird
 		public static void UpdateBullets()
 		{
 			for(int i=0; i<bulletList.Count; i++)
-			{	
+			{
 				bulletList[i].Update();
 		
 				if(bulletList[i].getX() > Director.Instance.GL.Context.GetViewport().Width)
 				{
 					bulletList.RemoveAt(i);
-					
 				}
 			}
 		}
+		
 		public static void UpdateRockets()
 		{
 			for(int i=0; i<rocketList.Count; i++)
@@ -130,8 +138,15 @@ namespace FlappyBird
 				if(rocketList[i].getX() > Director.Instance.GL.Context.GetViewport().Width)
 				{
 					rocketList.RemoveAt(i);
+					//rocketList[i].Dispose();
 				}
+				
 			}
+		}
+
+		public static void CheckCollision()
+		{
+			
 		}
 		public static void PlayerControls()
 		{
@@ -156,7 +171,6 @@ namespace FlappyBird
 				//check if button is pressed up 
 				player.goLeft();
 			}
-			//Console.WriteLine("player theoretical width " +player.getWidth() );
 		
 		}
 		public static void FireBullets(Bird bird)
@@ -173,9 +187,9 @@ namespace FlappyBird
 			{
 				TriangleDown = false;
 			}
-			
-			//Console.WriteLine("Number of bullets fired = "+bulletList.Count);
 		}
+
+
 		public static void FireRocket(Bird bird)
 		{
 			var GamePadData =  GamePad.GetData(0);
@@ -197,9 +211,8 @@ namespace FlappyBird
 		public static void UpdateRocketAmount()
 		{
 			rocketAmount = rocketAmount - 1;
-			rocketCount.Text = rocketAmount.ToString();
+			rocketCountLabel.Text = rocketAmount.ToString();
 		}
-		
-		
+			
 	}
 }

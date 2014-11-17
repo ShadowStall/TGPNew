@@ -19,20 +19,29 @@ namespace FlappyBird
 		private bool active;
 		
 		public bool Active { get{return active;} set{active = value;} }
-		
+		private Bounds2 bulletBounds ;
 		
 		
 		public Bullet (Scene scene)
 		{
-			textureInfo  = new TextureInfo("/Application/textures/bullet.png");
+			textureInfo  = new TextureInfo("/Application/textures/bullet2.png");
 			sprite	 		= new SpriteUV();
 			sprite 			= new SpriteUV(textureInfo);	
 			sprite.Quad.S 	= textureInfo.TextureSizef;
 			active = false;
 			sprite.Scale = new Vector2(0.2f);
+			//Collision Detection
+			bulletBounds = new Bounds2();
+			
+			
 			scene.AddChild(sprite);
 		}
-
+		public Bounds2 GetBounds()
+		{
+			sprite.GetContentWorldBounds(ref bulletBounds);
+			
+			return this.bulletBounds;
+		}
 		public void Dispose()
 		{
 			textureInfo.Dispose();
