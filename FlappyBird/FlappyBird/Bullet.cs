@@ -42,6 +42,19 @@ namespace FlappyBird
 			
 			return this.bulletBounds;
 		}
+		public void CheckCollision(Asteroid [] asteroidArray, Scene scene)
+		{
+			for(int i = 0; i<asteroidArray.Length; i++)
+			{
+				Console.WriteLine(asteroidArray[i].GetBounds());
+				if(GetBounds().Overlaps(asteroidArray[i].GetBounds()))
+				{
+					Console.WriteLine("Collision Asteroid");
+					//Change asteroid sprite
+				
+				}
+			}
+		}
 		public void Dispose()
 		{
 			textureInfo.Dispose();

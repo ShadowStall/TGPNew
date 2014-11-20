@@ -24,23 +24,22 @@ namespace FlappyBird
 		private static bool CrossDown = false;
 		//Handles projectiles
 		private static List <Bullet> bulletList;
-		
 		private static List <Rocket> rocketList;
 		//HUD
 		private static Hud _hudSymbolBullets;
 		//Testing asteroid manager
 		private static AsteroidManager asteroidManager;
-		//Testing randomnumber generator
-		
-		
+		//Audio Manager
+		private static AudioManager audio;
 		public static void Main (string[] args)
 		{
 			Initialize();
-			
+		
 			//Game loop
 			bool quitGame = false;
 			while (!quitGame) 
 			{
+				//spritesheet.Update(2.0f);
 				Update ();
 				Director.Instance.Update();
 				Director.Instance.Render();
@@ -59,10 +58,13 @@ namespace FlappyBird
 
 		public static void Initialize ()
 		{
+			
 			//Set up director and UISystem.
 			Director.Initialize ();
 			UISystem.Initialize(Director.Instance.GL.Context);
-			
+			//Background music
+			audio = new AudioManager();
+			audio.PlayBackgroundSound();
 			//Set game scene
 			gameScene = new Sce.PlayStation.HighLevel.GameEngine2D.Scene();
 			gameScene.Camera.SetViewFromViewport();
@@ -90,27 +92,22 @@ namespace FlappyBird
 			_hudSymbolBullets = new Hud(gameScene);
 		
 			//asteroid manager
-			asteroidManager = new AsteroidManager(gameScene);
+			asteroidManager = new AsteroidManager(gameScene);// Also creating the first 5 asteroids with the same positions
 			
 			Director.Instance.RunWithScene(gameScene, true);
 		}
-		
 		public static void Update()
 		{
-			
 			PlayerControls();
 			player.Update(0.0f);
 			FireBullets(player);
 			FireRocket(player);
-			player.CheckCollision();
-			//asteroidManager.HandleSpawnAsteroid();
-			//SpawnAsteroids();
-			//UpdateAsteroid();
+			player.CheckCollision(AsteroidManager.getAsteroidArray());
+			
 			asteroidManager.HandleSpawnTest2();
 			asteroidManager.Update();
 			UpdateRockets();
 			UpdateBullets();
-			//Console.WriteLine(player.getX() + " " + player.getY());
 			if(player.Alive)
 			{
 				background.Update(0.0f);				
@@ -121,14 +118,13 @@ namespace FlappyBird
 			for(int i=0; i<bulletList.Count; i++)
 			{
 				bulletList[i].Update();
-		
+				bulletList[i].CheckCollision(AsteroidManager.getAsteroidArray(), gameScene);
 				if(bulletList[i].getX() > Director.Instance.GL.Context.GetViewport().Width)
 				{
 					bulletList.RemoveAt(i);
 				}
 			}
 		}
-		
 		public static void UpdateRockets()
 		{
 			for(int i=0; i<rocketList.Count; i++)
@@ -138,39 +134,17 @@ namespace FlappyBird
 				if(rocketList[i].getX() > Director.Instance.GL.Context.GetViewport().Width)
 				{
 					rocketList.RemoveAt(i);
-					//rocketList[i].Dispose();
 				}
 				
 			}
 		}
-
-		public static void CheckCollision()
-		{
-			
-		}
 		public static void PlayerControls()
 		{
 			var GamePadData = GamePad.GetData(0);
-			if ((GamePadData.Buttons & GamePadButtons.Up ) != 0)
-			{
-				//check if button is pressed up 
-				player.goUp();
-			}
-			if ((GamePadData.Buttons & GamePadButtons.Down ) != 0)
-			{
-				//check if button is pressed up 
-				player.goDown();
-			}
-			if ((GamePadData.Buttons & GamePadButtons.Right ) != 0)
-			{
-				//check if button is pressed up 
-				player.goRight();
-			}
-			if ((GamePadData.Buttons & GamePadButtons.Left) != 0)
-			{
-				//check if button is pressed up 
-				player.goLeft();
-			}
+			if ((GamePadData.Buttons & GamePadButtons.Up ) != 0){player.goUp();}
+			if ((GamePadData.Buttons & GamePadButtons.Down ) != 0){player.goDown();}
+			if ((GamePadData.Buttons & GamePadButtons.Right ) != 0){player.goRight();}
+			if ((GamePadData.Buttons & GamePadButtons.Left) != 0){player.goLeft();} 
 		
 		}
 		public static void FireBullets(Bird bird)
@@ -178,24 +152,25 @@ namespace FlappyBird
 			var GamePadData =  GamePad.GetData(0);
 			if (TriangleDown == false && ((GamePadData.Buttons & GamePadButtons.Triangle) != 0))
 			{	
+				audio.PlayLazerSound();
 				Bullet bullet = new Bullet(gameScene);
 				bulletList.Add(bullet);
 				bullet.Fire(new Vector2(bird.getX()+160f, bird.getY()+50f));
 				TriangleDown = true;
 			}
-			if ( Input2.GamePad.GetData(0).Triangle.Release)
+			if (Input2.GamePad.GetData(0).Triangle.Release)
 			{
+				audio.StopLazerSound();
+				
 				TriangleDown = false;
 			}
+			
 		}
-
-
 		public static void FireRocket(Bird bird)
 		{
 			var GamePadData =  GamePad.GetData(0);
-			//sample code to use for when firing rockets
 			if (CrossDown == false && ((GamePadData.Buttons & GamePadButtons.Cross) != 0) && rocketAmount > 0)
-			{	
+			{
 				Rocket rocket = new Rocket(gameScene);
 				rocketList.Add(rocket);
 				rocket.Fire(new Vector2(bird.getX(), bird.getY()));

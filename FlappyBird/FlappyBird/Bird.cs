@@ -18,7 +18,7 @@ namespace FlappyBird
 		private bool alive;
 		private Bounds2 birdBounds;
 		public bool Alive { get{return alive;} set{alive = value;} }
-		private AsteroidManager asteroidManager;
+		//private AsteroidManager asteroidManager;
 		//Accessors.
 		//public SpriteUV Sprite { get{return sprite;} }
 		
@@ -26,7 +26,6 @@ namespace FlappyBird
 		public Bird (Scene scene)
 		{
 			textureInfo  = new TextureInfo("/Application/textures/player2.png");
-			
 			sprite = new SpriteUV();
 			sprite = new SpriteUV(textureInfo);	
 			sprite.Quad.S = textureInfo.TextureSizef;
@@ -35,7 +34,7 @@ namespace FlappyBird
 			//sprite.Scale = new Vector2(0.2f);
 			alive = true;
 			//birdBounds = new Bounds2();
-			asteroidManager = new AsteroidManager(scene);
+			//asteroidManager = new AsteroidManager(scene);
 			//Add to the current scene.
 			scene.AddChild(sprite);
 			
@@ -46,12 +45,11 @@ namespace FlappyBird
 			
 			return this.birdBounds;
 		}
-		public void CheckCollision()
+		public void CheckCollision(Asteroid [] asteroidArray)
 		{
-			Asteroid [] asteroidArray = asteroidManager.getAsteroidArray();
-		
 			for(int i = 0; i<asteroidArray.Length; i++)
 			{
+				//Console.WriteLine(asteroidArray[i].GetBounds());
 				if(GetBirdBounds().Overlaps(asteroidArray[i].GetBounds()))
 				{
 					Console.WriteLine("Collision");

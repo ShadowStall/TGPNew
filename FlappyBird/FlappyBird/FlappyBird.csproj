@@ -48,6 +48,11 @@
     <Compile Include="AsteroidManager.cs" />
     <Compile Include="TimeManager.cs" />
     <Compile Include="RandomNumberGenerator.cs" />
+    <Compile Include="AudioManager.cs" />
+    <Compile Include="SpriteSheet.cs" />
+    <Compile Include="GameManager.cs" />
+    <Compile Include="MenuScene.cs" />
+    <Compile Include="SceneManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -58,6 +63,7 @@
     <Folder Include="textures\" />
     <Folder Include="fonts\" />
     <Folder Include="textures\HUD\" />
+    <Folder Include="Audio\" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Texture.fcg" />
@@ -77,5 +83,9 @@
     <Content Include="textures\bullet2.png" />
     <Content Include="textures\asteroid.png" />
     <Content Include="textures\asteroid2.png" />
+    <Content Include="Audio\BGLoop.mp3" />
+    <Content Include="Audio\Lazer1.wav" />
+    <Content Include="textures\explosion.png" />
+    <Content Include="textures\ship sheet.png" />
   </ItemGroup>
 </Project>

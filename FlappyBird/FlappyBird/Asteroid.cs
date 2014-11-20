@@ -14,6 +14,7 @@ namespace FlappyBird
 			
 		private SpriteUV sprite;
 		private TextureInfo textureInfo = new TextureInfo("/Application/textures/asteroid2.png");
+	    private TextureInfo explodeInfo = new TextureInfo("/Application/textures/explosion.png");
 		private bool disposeOf = false;
 		private Random rand; 
 		private float movementSpeed;
@@ -27,15 +28,12 @@ namespace FlappyBird
 			sprite 			= new SpriteUV(textureInfo);	
 			sprite.Quad.S 	= textureInfo.TextureSizef;
 			sprite.Scale = new Vector2(0.2f);	
-			movementSpeed = 7.5f;
+			movementSpeed = 5.5f;
 			scene.AddChild(sprite);
 			lowY = 10;
 			highY = 500;
 			asteroidAmount = 10;
-			
-			//asteroidbounds = new Bounds2();
-		
-			
+			sprite.Position = new Vector2(-300.0f, -300.0f);// spawn the first ones off screen
 		}
 		public Bounds2 GetBounds()
 		{
@@ -71,7 +69,6 @@ namespace FlappyBird
 			sprite.Position = new Vector2(970, y);
 		}
 		public void setOnScreen(bool ok)
-			
 		{
 			this.onScreen = ok;
 		}
@@ -89,6 +86,10 @@ namespace FlappyBird
 			{
 				return true;
 			}
+		}
+		public void detonateAsteroid()
+		{
+
 		}
 	}
 }
