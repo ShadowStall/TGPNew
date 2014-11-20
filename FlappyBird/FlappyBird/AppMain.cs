@@ -39,7 +39,7 @@ namespace FlappyBird
 			bool quitGame = false;
 			while (!quitGame) 
 			{
-				//spritesheet.Update(2.0f);
+				//spritesheet.Update(2.0f);//
 				Update ();
 				Director.Instance.Update();
 				Director.Instance.Render();
