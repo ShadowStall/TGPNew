@@ -8,6 +8,7 @@ namespace FlappyBird
 	{
 		private static SoundPlayer winamp;// of soundPlayer or MediaPLayer 
 		private static Sound soundMovement;// of the actual sound
+	
 		private static Bgm bgm;
 		private static BgmPlayer bgmPlayer;
 		public AudioManager ()
@@ -40,6 +41,10 @@ namespace FlappyBird
 		public void PlayBackgroundSound()
 		{
 			bgmPlayer.Play();
+		}
+		public void PlayDestructionSound()
+		{
+			
 		}
 
 		

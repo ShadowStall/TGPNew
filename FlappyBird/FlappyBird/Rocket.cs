@@ -16,6 +16,7 @@ namespace FlappyBird
 		private bool active;
 		
 		public bool Active { get{return active;} set{active = value;} }
+		private Bounds2 rocketBounds ;
 		
 		
 		public Rocket (Scene scene)
@@ -26,7 +27,32 @@ namespace FlappyBird
 			sprite.Quad.S 	= textureInfo.TextureSizef;
 			active = false;
 			sprite.Scale = new Vector2(0.5f);
+					//Collision Detection
+			rocketBounds = new Bounds2();
+			
 			scene.AddChild(sprite);
+		}
+		public Bounds2 GetBounds()
+		{
+			sprite.GetContentWorldBounds(ref rocketBounds);
+			
+			return this.rocketBounds;
+		}
+			
+		public void CheckCollision(Asteroid [] asteroidArray, Scene scene)
+		{
+			for(int i = 0; i<asteroidArray.Length; i++)
+			{
+				//Console.WriteLine(asteroidArray[i].GetBounds());
+				if(GetBounds().Overlaps(asteroidArray[i].GetBounds()))
+				{
+					Console.WriteLine("Collision Asteroid");
+					//Change asteroid sprite
+					asteroidArray[i].detonateAsteroid();
+					asteroidArray[i].setAlive(false);
+					
+				}
+			}
 		}
 		public void Dispose()
 		{

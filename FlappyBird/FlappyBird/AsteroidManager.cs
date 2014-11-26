@@ -40,8 +40,20 @@ namespace FlappyBird
 				asteroidArray[i].Update();
 			}
 		}
-
-		public void HandleSpawnTest2()
+		public void DestroyAsteroid()
+		{
+			// move off screen
+			//asteroidArray[i].detonateAsteroid();
+			for(int i = 0 ; i< numberOfAsteroids; i++)
+			{
+				if (asteroidArray[i].getAlive() == false)
+				{
+					asteroidArray[i].detonateAsteroid();
+				}
+			}
+			
+		}
+		public void HandleSpawn()
 		{
 			if(timeManaged.HasIntervalPassed())
 			{
@@ -49,6 +61,7 @@ namespace FlappyBird
 					{
 						SaveRandomNumbers();
 						asteroidArray[i].SpawnAsteroid(asteroidYPos[i]);	
+						asteroidArray[i].setAlive(true);
 					}
 			}
 		}

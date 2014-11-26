@@ -93,7 +93,7 @@ namespace FlappyBird
 			FireRocket(player);
 			player.CheckCollision(AsteroidManager.getAsteroidArray());
 			
-			asteroidManager.HandleSpawnTest2();
+			asteroidManager.HandleSpawn();
 			asteroidManager.Update();
 			UpdateRockets();
 			UpdateBullets();
@@ -114,6 +114,7 @@ namespace FlappyBird
 			{
 				bulletList[i].Update();
 				bulletList[i].CheckCollision(AsteroidManager.getAsteroidArray(), this);
+				
 				if(bulletList[i].getX() > Director.Instance.GL.Context.GetViewport().Width)
 				{
 					bulletList.RemoveAt(i);
@@ -125,7 +126,7 @@ namespace FlappyBird
 			for(int i=0; i<rocketList.Count; i++)
 			{	
 				rocketList[i].Update();
-		
+			    rocketList[i].CheckCollision(AsteroidManager.getAsteroidArray(), this);
 				if(rocketList[i].getX() > Director.Instance.GL.Context.GetViewport().Width)
 				{
 					rocketList.RemoveAt(i);
