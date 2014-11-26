@@ -226,6 +226,14 @@ F:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBir
 F:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\obj\Debug\convertedpdb\app.exe.mdb
 F:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\obj\Debug\app.exe
 F:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\obj\Debug\app.pdb
+G:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\explosion.png
+G:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\ship sheet.png
+G:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\explosion.png
+G:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\ship sheet.png
+F:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\explosion.png
+F:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\ship sheet.png
+F:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\explosion.png
+F:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\ship sheet.png
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.info
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\shaders\Texture.cgx
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.exe
@@ -253,6 +261,8 @@ E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBir
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\asteroid2.png
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Audio\BGLoop.mp3
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Audio\Lazer1.wav
+E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\explosion.png
+E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\ship sheet.png
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\app.info
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\shaders\Texture.cgx
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\app.exe
@@ -280,20 +290,10 @@ E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBir
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\asteroid2.png
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Audio\BGLoop.mp3
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Audio\Lazer1.wav
+E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\explosion.png
+E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\ship sheet.png
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird.psdp
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\obj\Debug\shaders\shaders\Texture.cgx
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\obj\Debug\convertedpdb\app.exe.mdb
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\obj\Debug\app.exe
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\obj\Debug\app.pdb
-E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\explosion.png
-E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\explosion.png
-E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\ship sheet.png
-E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\ship sheet.png
-G:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\explosion.png
-G:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\ship sheet.png
-G:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\explosion.png
-G:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\ship sheet.png
-F:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\explosion.png
-F:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\ship sheet.png
-F:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\explosion.png
-F:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\ship sheet.png

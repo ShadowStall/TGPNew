@@ -25,6 +25,7 @@ namespace FlappyBird
 		
 		private static Rectangle backRect;
 		private static TouchStatus touchStatus, lastTouchStatus;
+
 		
 		public MenuScene()
 		{
@@ -56,7 +57,7 @@ namespace FlappyBird
 			background.Position = new Vector2(0, 0);
 			this.AddChild(background);//adds background
 
-			UISystem.SetScene(scene, null);
+			UISystem.SetScene(scene);//, null);
 			this.Camera.SetViewFromViewport();
 			Scheduler.Instance.ScheduleUpdateForTarget(this,0,false);
 			this.RegisterDisposeOnExitRecursive();
@@ -88,8 +89,7 @@ namespace FlappyBird
 					if(ButtonHit(xPos, yPos, backRect))
 					{
 						Touch.GetData(0).Clear();
-						//SceneManager.Instance.SendSceneToFront(new GameScene(), SceneManager.SceneTransitionType.SolidFade, 0.0f); 
-						UISystem.SetScene(null);
+						SceneManager.Instance.SendSceneToFront(new LevelSceneNew(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
 					}
 					
 					lastTouchStatus = touchStatus;

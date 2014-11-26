@@ -67,13 +67,6 @@ namespace FlappyBird
 		}
 		public void Update()
 		{
-		//	if (active)
-		//	{
-		//		for(int i=0; i<50; i++)
-		//		{
-		//			sprite.Position = new Vector2(sprite.Position.X + 0.5f, sprite.Position.Y);
-		//		}
-		//	}
 			if (active)
 			{	
 				sprite.Position = new Vector2(sprite.Position.X + 10.5f, sprite.Position.Y);

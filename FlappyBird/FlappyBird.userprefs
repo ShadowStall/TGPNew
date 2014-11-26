@@ -1,16 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\Asteroid.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\MenuScene.cs">
     <Files>
-      <File FileName="FlappyBird\AppMain.cs" Line="43" Column="7" />
-      <File FileName="FlappyBird\Asteroid.cs" Line="67" Column="35" />
+      <File FileName="FlappyBird\AppMain.cs" Line="38" Column="4" />
+      <File FileName="FlappyBird\MenuScene.cs" Line="93" Column="7" />
+      <File FileName="FlappyBird\LevelSceneNew.cs" Line="73" Column="9" />
+      <File FileName="FlappyBird\SceneManager.cs" Line="59" Column="47" />
+      <File FileName="e:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\Background.cs" Line="29" Column="50" />
+      <File FileName="FlappyBird\Bullet.cs" Line="29" Column="12" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="FlappyBird" expanded="True">
-            <Node name="Audio" expanded="True" />
-            <Node name="Asteroid.cs" selected="True" />
+            <Node name="textures" expanded="True" />
+            <Node name="MenuScene.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -18,9 +22,7 @@
         <State expanded="True" selected="True" />
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>crossFade</Value>
-        </State>
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

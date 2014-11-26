@@ -8,7 +8,7 @@ using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 
 namespace FlappyBird
 {
-	public class Background
+	public class Background// : Sce.PlayStation.HighLevel.GameEngine2D.Scene
 	{	
 		//Private variables.
 		private SpriteUV[] 	sprites;
