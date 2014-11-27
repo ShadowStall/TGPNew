@@ -17,7 +17,7 @@ namespace FlappyBird
 		//private static Sce.PlayStation.HighLevel.GameEngine2D.Scene gameScene;
 		private Sce.PlayStation.HighLevel.UI.Scene uiScene;
 		private Sce.PlayStation.HighLevel.UI.Label rocketCountLabel;
-		private Bird	player;
+		private Bird player;
 		private Background background;
 		private int rocketAmount = 10;
 		private bool TriangleDown = false;
@@ -31,7 +31,9 @@ namespace FlappyBird
 		private AsteroidManager asteroidManager;
 		//Audio Manager
 		private AudioManager audio;
-		
+		//Score amount
+		private int Score = 0;
+		private Sce.PlayStation.HighLevel.UI.Label scoreLabel;
 		public LevelSceneNew()
 		{
 			Initialize();
@@ -58,8 +60,21 @@ namespace FlappyBird
 			
 			panel.AddChildLast(rocketCountLabel);
 			
+			//Score Counter
+			Panel scorePanel = new Panel();
+			scorePanel.Width  = Director.Instance.GL.Context.GetViewport().Width;
+			scorePanel.Height = Director.Instance.GL.Context.GetViewport().Height;
+			
+			scoreLabel = new Sce.PlayStation.HighLevel.UI.Label();
+			scoreLabel.SetPosition(240f, 12f);
+			scoreLabel.Text = Score.ToString();
+			
+			scorePanel.AddChildLast(scoreLabel);
+			
+	
 			uiScene.RootWidget.AddChildLast(panel);
 			
+			uiScene.RootWidget.AddChildLast(scorePanel);
 			UISystem.SetScene(uiScene);
 			
 			background = new Background(this);

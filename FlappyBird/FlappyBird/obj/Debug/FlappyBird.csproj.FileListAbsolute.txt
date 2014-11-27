@@ -297,3 +297,66 @@ E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBir
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\obj\Debug\convertedpdb\app.exe.mdb
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\obj\Debug\app.exe
 E:\Technical games Production\BackUp Assignment Part2\Assignment Part2\FlappyBird\FlappyBird\obj\Debug\app.pdb
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.info
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\shaders\Texture.cgx
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.exe
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.Json.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.Xml.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.Runtime.Serialization.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.Core.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.ServiceModel.Web.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.ServiceModel.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.exe.mdb
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bottompipe.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bird.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\toppipe.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\background.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bullet.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\player.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\backgroundV2.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\rocket.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\HUD\BulletCounterSymbol.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\player2.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bullet2.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\asteroid.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\asteroid2.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Audio\BGLoop.mp3
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Audio\Lazer1.wav
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\explosion.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\ship sheet.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\app.info
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\shaders\Texture.cgx
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\app.exe
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.Json.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.Xml.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.Runtime.Serialization.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.Core.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.ServiceModel.Web.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.ServiceModel.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\app.exe.mdb
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bottompipe.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bird.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\toppipe.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\background.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bullet.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\player.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\backgroundV2.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\rocket.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\HUD\BulletCounterSymbol.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\player2.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bullet2.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\asteroid.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\asteroid2.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Audio\BGLoop.mp3
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Audio\Lazer1.wav
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\explosion.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\ship sheet.png
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird.psdp
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\obj\Debug\shaders\shaders\Texture.cgx
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\obj\Debug\convertedpdb\app.exe.mdb
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\obj\Debug\app.exe
+C:\Student Temporary Folder\TGPNew\FlappyBird\FlappyBird\obj\Debug\app.pdb
