@@ -22,30 +22,18 @@ namespace FlappyBird
 		private int lowY, highY;
 		private int asteroidAmount;
 		private Bounds2 asteroidbounds;
-		private bool alive = true;
-		private SpriteUV explodingsprite;
 		public Asteroid (Scene scene)
 		{
-			//normal sprite
 			sprite	 		= new SpriteUV();
 			sprite 			= new SpriteUV(textureInfo);	
 			sprite.Quad.S 	= textureInfo.TextureSizef;
 			sprite.Scale = new Vector2(0.2f);	
 			movementSpeed = 5.5f;
-			
 			scene.AddChild(sprite);
 			lowY = 10;
 			highY = 500;
 			asteroidAmount = 10;
 			sprite.Position = new Vector2(-300.0f, -300.0f);// spawn the first ones off screen
-		}
-		public void setAlive(bool peanut)
-		{
-			this.alive = peanut;
-		}
-		public bool getAlive()
-		{
-			return this.alive;
 		}
 		public Bounds2 GetBounds()
 		{
@@ -101,7 +89,7 @@ namespace FlappyBird
 		}
 		public void detonateAsteroid()
 		{
-			sprite.Position = new Vector2(- 100, -100);
+
 		}
 	}
 }

@@ -46,14 +46,12 @@ namespace FlappyBird
 		{
 			for(int i = 0; i<asteroidArray.Length; i++)
 			{
-				//Console.WriteLine(asteroidArray[i].GetBounds());/
+				Console.WriteLine(asteroidArray[i].GetBounds());
 				if(GetBounds().Overlaps(asteroidArray[i].GetBounds()))
 				{
 					Console.WriteLine("Collision Asteroid");
 					//Change asteroid sprite
-					asteroidArray[i].detonateAsteroid();
-					asteroidArray[i].setAlive(false);
-					
+				
 				}
 			}
 		}
@@ -69,6 +67,13 @@ namespace FlappyBird
 		}
 		public void Update()
 		{
+		//	if (active)
+		//	{
+		//		for(int i=0; i<50; i++)
+		//		{
+		//			sprite.Position = new Vector2(sprite.Position.X + 0.5f, sprite.Position.Y);
+		//		}
+		//	}
 			if (active)
 			{	
 				sprite.Position = new Vector2(sprite.Position.X + 10.5f, sprite.Position.Y);

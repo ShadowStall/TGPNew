@@ -6,7 +6,6 @@ namespace FlappyBird
 	{
 		private static GameManager instance;
 		private bool  itemsOn;
-		private int   difficulty;
 		private float brightness;
 		private float contrast;
 		private float musicVolume;
@@ -27,7 +26,6 @@ namespace FlappyBird
 		private GameManager()
 		{
 			itemsOn = true;
-			difficulty = 1;
 			brightness = 0.0f;
 			contrast = 0.0f;
 			musicVolume = 1.0f;
@@ -38,12 +36,6 @@ namespace FlappyBird
 		{
 			get{return itemsOn;}
 			set{itemsOn=value;}
-		}
-		
-		public int Difficulty
-		{
-			get{return difficulty;}
-			set{difficulty = value;}
 		}
 		
 		public float Brightness

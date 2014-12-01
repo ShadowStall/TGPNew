@@ -48,11 +48,14 @@
     <Compile Include="TimeManager.cs" />
     <Compile Include="RandomNumberGenerator.cs" />
     <Compile Include="AudioManager.cs" />
+    <Compile Include="SpriteSheet.cs" />
     <Compile Include="GameManager.cs" />
     <Compile Include="MenuScene.cs" />
     <Compile Include="SceneManager.cs" />
     <Compile Include="AppMain.cs" />
     <Compile Include="LevelSceneNew.cs" />
+    <Compile Include="OptionScene.cs" />
+    <Compile Include="GameoverScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -72,10 +75,7 @@
   <ItemGroup>
     <Content Include="textures\bottompipe.png" />
     <Content Include="textures\bird.png" />
-    <Content Include="textures\toppipe.png" />
-    <Content Include="textures\background.png" />
     <Content Include="textures\bullet.png" />
-    <Content Include="textures\player.png" />
     <Content Include="textures\backgroundV2.png" />
     <Content Include="textures\rocket.png" />
     <Content Include="textures\HUD\BulletCounterSymbol.png" />
@@ -87,5 +87,13 @@
     <Content Include="Audio\Lazer1.wav" />
     <Content Include="textures\explosion.png" />
     <Content Include="textures\ship sheet.png" />
+    <Content Include="textures\Start.png" />
+    <Content Include="textures\Option.png" />
+    <Content Include="textures\Back.jpg" />
+    <Content Include="textures\Menu.png" />
+    <Content Include="textures\Retry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LevelScene.cs" />
   </ItemGroup>
 </Project>

@@ -10,10 +10,7 @@ System.ServiceModel.dll
 Sce.PlayStation.HighLevel.UI.dll
 textures/bottompipe.png
 textures/bird.png
-textures/toppipe.png
-textures/background.png
 textures/bullet.png
-textures/player.png
 textures/backgroundV2.png
 textures/rocket.png
 textures/HUD/BulletCounterSymbol.png
@@ -25,3 +22,8 @@ Audio/BGLoop.mp3
 Audio/Lazer1.wav
 textures/explosion.png
 textures/ship sheet.png
+textures/Start.png
+textures/Option.png
+textures/Back.jpg
+textures/Menu.png
+textures/Retry.png

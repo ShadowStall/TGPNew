@@ -14,18 +14,17 @@ namespace FlappyBird
 {
 	public class MenuScene : Sce.PlayStation.HighLevel.GameEngine2D.Scene
 	{ 
-		private static float screenWidth;
-		private static float screenHeight;
+		private float screenWidth;
+		private float screenHeight;
 		
-		private static TextureInfo _ti;
-		private static Texture2D 	_texture;
+		private TextureInfo _ti;
+		private Texture2D 	_texture;
 		
-		private static TextureInfo tiBackground;
-		private static Texture2D   textureBackground;
+		private TextureInfo tiBackground;
+		private Texture2D   textureBackground;
 		
-		private static Rectangle backRect;
-		private static TouchStatus touchStatus, lastTouchStatus;
-
+		private Rectangle startRect, optionRect;
+		private TouchStatus touchStatus, lastTouchStatus;
 		
 		public MenuScene()
 		{
@@ -35,21 +34,30 @@ namespace FlappyBird
 			
 			Sce.PlayStation.HighLevel.UI.Scene scene = new Sce.PlayStation.HighLevel.UI.Scene();
 			
-			ImageBox back = new ImageBox();
-			back.Image = new ImageAsset("/Application/textures/asteroid.png");
-			back.ImageScaleType = ImageScaleType.AspectInside;
-			back.Width = back.Image.Width;
-			back.Height = back.Image.Height;
-			back.X = 0;
-			back.Y = screenSize.Height - back.Height;
-			backRect = new Rectangle(back.X, back.Y, back.Width, back.Height);
-			scene.RootWidget.AddChildLast(back);
+			ImageBox start = new ImageBox();
+			start.Image = new ImageAsset("/Application/textures/Start.png");
+			start.ImageScaleType = ImageScaleType.AspectInside;
+			start.Width = start.Image.Width;
+			start.Height = start.Image.Height;
+			start.X = screenSize.Width/2 - start.Width/2;
+			start.Y = screenSize.Height/2;
+			startRect = new Rectangle(start.X, start.Y, start.Width, start.Height);
+			scene.RootWidget.AddChildLast(start);
 			
+			ImageBox option = new ImageBox();
+			option.Image = new ImageAsset("/Application/textures/Option.png");
+			option.ImageScaleType = ImageScaleType.AspectInside;
+			option.Width = option.Image.Width;
+			option.Height = option.Image.Height;
+			option.X = screenSize.Width/2 - option.Width/2;
+			option.Y = screenSize.Height/2 + 50;
+			optionRect = new Rectangle(option.X, option.Y, option.Width, option.Height);
+			scene.RootWidget.AddChildLast(option);
 			
 			_texture = new Texture2D(screenSize.Width, screenSize.Height, false, PixelFormat.Rgba);
 			_ti = new TextureInfo(_texture);
 
-			textureBackground = new Texture2D("/Application/textures/bottompipe.png", false);
+			textureBackground = new Texture2D("/Application/textures/backgroundV2.png", false);
 			tiBackground = new TextureInfo(textureBackground);
 			
 			SpriteUV background = new SpriteUV(tiBackground);
@@ -86,14 +94,20 @@ namespace FlappyBird
 				
 				if(data.Status  == TouchStatus.Down)
 				{
-					if(ButtonHit(xPos, yPos, backRect))
+					if(ButtonHit(xPos, yPos, startRect))
 					{
 						Touch.GetData(0).Clear();
+						//If screen is touched then switch to level one
 						SceneManager.Instance.SendSceneToFront(new LevelSceneNew(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
 					}
 					
+					if(ButtonHit(xPos, yPos, optionRect))
+					{
+						Touch.GetData(0).Clear();
+						SceneManager.Instance.SendSceneToFront(new OptionScene(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
+					}
+					
 					lastTouchStatus = touchStatus;
-					Touch.GetData(0).Clear();
 				}
 			}
 		}

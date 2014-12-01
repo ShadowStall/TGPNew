@@ -14,14 +14,14 @@ namespace FlappyBird
 {
 	public class LevelSceneNew : Sce.PlayStation.HighLevel.GameEngine2D.Scene
 	{	
-		//private static Sce.PlayStation.HighLevel.GameEngine2D.Scene gameScene;
 		private Sce.PlayStation.HighLevel.UI.Scene uiScene;
 		private Sce.PlayStation.HighLevel.UI.Label rocketCountLabel;
-		private Bird player;
+		private Bird	player;
 		private Background background;
 		private int rocketAmount = 10;
 		private bool TriangleDown = false;
 		private bool CrossDown = false;
+		
 		//Handles projectiles
 		private List <Bullet> bulletList;
 		private List <Rocket> rocketList;
@@ -31,9 +31,7 @@ namespace FlappyBird
 		private AsteroidManager asteroidManager;
 		//Audio Manager
 		private AudioManager audio;
-		//Score amount
-		private int Score = 0;
-		private Sce.PlayStation.HighLevel.UI.Label scoreLabel;
+		
 		public LevelSceneNew()
 		{
 			Initialize();
@@ -60,21 +58,8 @@ namespace FlappyBird
 			
 			panel.AddChildLast(rocketCountLabel);
 			
-			//Score Counter
-			Panel scorePanel = new Panel();
-			scorePanel.Width  = Director.Instance.GL.Context.GetViewport().Width;
-			scorePanel.Height = Director.Instance.GL.Context.GetViewport().Height;
-			
-			scoreLabel = new Sce.PlayStation.HighLevel.UI.Label();
-			scoreLabel.SetPosition(240f, 12f);
-			scoreLabel.Text = Score.ToString();
-			
-			scorePanel.AddChildLast(scoreLabel);
-			
-	
 			uiScene.RootWidget.AddChildLast(panel);
 			
-			uiScene.RootWidget.AddChildLast(scorePanel);
 			UISystem.SetScene(uiScene);
 			
 			background = new Background(this);
@@ -102,19 +87,23 @@ namespace FlappyBird
 		public override void Update(float dt)
 		{
 			base.Update(dt);
-			PlayerControls();
-			player.Update(0.0f);
-			FireBullets(player);
-			FireRocket(player);
-			player.CheckCollision(AsteroidManager.getAsteroidArray());
-			
-			asteroidManager.HandleSpawn();
-			asteroidManager.Update();
-			UpdateRockets();
-			UpdateBullets();
-			if(player.Alive)
+			if(player.Alive == true)
 			{
+				PlayerControls();
+				player.Update(0.0f);
+				FireBullets(player);
+				FireRocket(player);
+				player.CheckCollision(AsteroidManager.getAsteroidArray());
+				
+				asteroidManager.HandleSpawnTest2();
+				asteroidManager.Update();
+				UpdateRockets();
+				UpdateBullets();
 				background.Update(0.0f);				
+			}
+			if(player.Alive == false)
+			{
+				//SceneManager.Instance.SendSceneToFront(new GameoverScene(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
 			}
 		}
 				
@@ -129,7 +118,6 @@ namespace FlappyBird
 			{
 				bulletList[i].Update();
 				bulletList[i].CheckCollision(AsteroidManager.getAsteroidArray(), this);
-				
 				if(bulletList[i].getX() > Director.Instance.GL.Context.GetViewport().Width)
 				{
 					bulletList.RemoveAt(i);
@@ -141,7 +129,7 @@ namespace FlappyBird
 			for(int i=0; i<rocketList.Count; i++)
 			{	
 				rocketList[i].Update();
-			    rocketList[i].CheckCollision(AsteroidManager.getAsteroidArray(), this);
+		
 				if(rocketList[i].getX() > Director.Instance.GL.Context.GetViewport().Width)
 				{
 					rocketList.RemoveAt(i);
