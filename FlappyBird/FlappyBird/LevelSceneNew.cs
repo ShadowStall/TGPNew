@@ -14,7 +14,6 @@ namespace FlappyBird
 {
 	public class LevelSceneNew : Sce.PlayStation.HighLevel.GameEngine2D.Scene
 	{	
-		//private static Sce.PlayStation.HighLevel.GameEngine2D.Scene gameScene;
 		private Sce.PlayStation.HighLevel.UI.Scene uiScene;
 		private Sce.PlayStation.HighLevel.UI.Label rocketCountLabel;
 		private Bird	player;
@@ -22,6 +21,7 @@ namespace FlappyBird
 		private int rocketAmount = 10;
 		private bool TriangleDown = false;
 		private bool CrossDown = false;
+		
 		//Handles projectiles
 		private List <Bullet> bulletList;
 		private List <Rocket> rocketList;
@@ -87,19 +87,23 @@ namespace FlappyBird
 		public override void Update(float dt)
 		{
 			base.Update(dt);
-			PlayerControls();
-			player.Update(0.0f);
-			FireBullets(player);
-			FireRocket(player);
-			player.CheckCollision(AsteroidManager.getAsteroidArray());
-			
-			asteroidManager.HandleSpawn();
-			asteroidManager.Update();
-			UpdateRockets();
-			UpdateBullets();
-			if(player.Alive)
+			if(player.Alive == true)
 			{
+				PlayerControls();
+				player.Update(0.0f);
+				FireBullets(player);
+				FireRocket(player);
+				player.CheckCollision(AsteroidManager.getAsteroidArray());
+				
+				asteroidManager.HandleSpawnTest2();
+				asteroidManager.Update();
+				UpdateRockets();
+				UpdateBullets();
 				background.Update(0.0f);				
+			}
+			if(player.Alive == false)
+			{
+				//SceneManager.Instance.SendSceneToFront(new GameoverScene(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
 			}
 		}
 				
@@ -114,7 +118,6 @@ namespace FlappyBird
 			{
 				bulletList[i].Update();
 				bulletList[i].CheckCollision(AsteroidManager.getAsteroidArray(), this);
-				
 				if(bulletList[i].getX() > Director.Instance.GL.Context.GetViewport().Width)
 				{
 					bulletList.RemoveAt(i);
@@ -126,7 +129,7 @@ namespace FlappyBird
 			for(int i=0; i<rocketList.Count; i++)
 			{	
 				rocketList[i].Update();
-			    rocketList[i].CheckCollision(AsteroidManager.getAsteroidArray(), this);
+		
 				if(rocketList[i].getX() > Director.Instance.GL.Context.GetViewport().Width)
 				{
 					rocketList.RemoveAt(i);

@@ -21,6 +21,7 @@ namespace FlappyBird
 		private Random rand;
 		private RandomNumberGenerator rand2;
 		private int[] asteroidYPos;
+		
 		public AsteroidManager (Sce.PlayStation.HighLevel.GameEngine2D.Scene scene)
 		{
 			timeManaged = new TimeManager(3.5);
@@ -40,20 +41,8 @@ namespace FlappyBird
 				asteroidArray[i].Update();
 			}
 		}
-		public void DestroyAsteroid()
-		{
-			// move off screen
-			//asteroidArray[i].detonateAsteroid();
-			for(int i = 0 ; i< numberOfAsteroids; i++)
-			{
-				if (asteroidArray[i].getAlive() == false)
-				{
-					asteroidArray[i].detonateAsteroid();
-				}
-			}
-			
-		}
-		public void HandleSpawn()
+
+		public void HandleSpawnTest2()
 		{
 			if(timeManaged.HasIntervalPassed())
 			{
@@ -61,7 +50,6 @@ namespace FlappyBird
 					{
 						SaveRandomNumbers();
 						asteroidArray[i].SpawnAsteroid(asteroidYPos[i]);	
-						asteroidArray[i].setAlive(true);
 					}
 			}
 		}

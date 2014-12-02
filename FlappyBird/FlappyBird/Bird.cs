@@ -30,7 +30,12 @@ namespace FlappyBird
 			sprite = new SpriteUV(textureInfo);	
 			sprite.Quad.S = textureInfo.TextureSizef;
 			sprite.Position = new Vector2(50.0f,Director.Instance.GL.Context.GetViewport().Height*0.5f);
+			//sprite.Pivot 	= new Vector2(0.5f,0.5f);
+			//sprite.Scale = new Vector2(0.2f);
 			alive = true;
+			//birdBounds = new Bounds2();
+			//asteroidManager = new AsteroidManager(scene);
+			//Add to the current scene.
 			scene.AddChild(sprite);
 			
 		}
@@ -44,8 +49,10 @@ namespace FlappyBird
 		{
 			for(int i = 0; i<asteroidArray.Length; i++)
 			{
+				//Console.WriteLine(asteroidArray[i].GetBounds());
 				if(GetBirdBounds().Overlaps(asteroidArray[i].GetBounds()))
 				{
+					alive = false;
 					Console.WriteLine("Collision");
 				}
 			}

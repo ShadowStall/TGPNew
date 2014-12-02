@@ -2,11 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\LevelSceneNew.cs">
     <Files>
-      <File FileName="FlappyBird\AsteroidManager.cs" Line="51" Column="39" />
-      <File FileName="FlappyBird\Asteroid.cs" Line="91" Column="26" />
-      <File FileName="FlappyBird\Rocket.cs" Line="46" Column="7" />
-      <File FileName="FlappyBird\Bullet.cs" Line="45" Column="29" />
-      <File FileName="FlappyBird\LevelSceneNew.cs" Line="124" Column="30" />
+      <File FileName="FlappyBird\OptionScene.cs" Line="12" Column="1" />
+      <File FileName="FlappyBird\GameoverScene.cs" Line="104" Column="7" />
+      <File FileName="FlappyBird\LevelSceneNew.cs" Line="101" Column="21" />
+      <File FileName="FlappyBird\MenuScene.cs" Line="52" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,7 +16,7 @@
         </State>
       </Pad>
       <Pad Id="ClassPad">
-        <State expanded="True" selected="True" />
+        <State selected="True" />
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State />
