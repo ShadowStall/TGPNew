@@ -1,23 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\LevelSceneNew.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\AudioManager.cs">
     <Files>
-      <File FileName="FlappyBird\OptionScene.cs" Line="12" Column="1" />
-      <File FileName="FlappyBird\GameoverScene.cs" Line="104" Column="7" />
-      <File FileName="FlappyBird\LevelSceneNew.cs" Line="129" Column="26" />
-      <File FileName="FlappyBird\Bird.cs" Line="53" Column="24" />
-      <File FileName="FlappyBird\AsteroidManager.cs" Line="63" Column="5" />
-      <File FileName="d:\Assignments\Technical games Production\BackUp Assignment Part2\FlappyBird\FlappyBird\AppMain.cs" Line="21" Column="1" />
-      <File FileName="FlappyBird\Asteroid.cs" Line="99" Column="2" />
+      <File FileName="FlappyBird\Asteroid.cs" Line="104" Column="33" />
+      <File FileName="FlappyBird\Bird.cs" Line="59" Column="28" />
+      <File FileName="FlappyBird\AudioManager.cs" Line="77" Column="4" />
+      <File FileName="d:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\LevelOne.cs" Line="87" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="FlappyBird" expanded="True">
-            <Node name="textures" expanded="True">
-              <Node name="HUD" expanded="True" />
-            </Node>
-            <Node name="LevelSceneNew.cs" selected="True" />
+            <Node name="Audio" expanded="True" />
+            <Node name="AudioManager.cs" selected="True" />
           </Node>
         </State>
       </Pad>

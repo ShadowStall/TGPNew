@@ -23,8 +23,10 @@ namespace FlappyBird
 		private int asteroidAmount;
 		private Bounds2 asteroidbounds;
 		private bool alive = true;
+		private AudioManager audio;
 		public Asteroid (Scene scene)
 		{
+			audio = new AudioManager();
 			sprite	 		= new SpriteUV();
 			sprite 			= new SpriteUV(textureInfo);	
 			sprite.Quad.S 	= textureInfo.TextureSizef;
@@ -99,6 +101,7 @@ namespace FlappyBird
 	
 		public void detonateAsteroid()
 		{
+			audio.PlayAsteroidHitSound();
 			sprite.Position = new Vector2(- 100, -100);
 		}
 	}

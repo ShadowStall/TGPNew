@@ -97,7 +97,7 @@ namespace FlappyBird
 					if(ButtonHit(xPos, yPos, retryRect))
 					{
 						Touch.GetData(0).Clear();
-						SceneManager.Instance.SendSceneToFront(new LevelSceneNew(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
+						SceneManager.Instance.SendSceneToFront(new LevelOne(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
 					}
 					
 					if(ButtonHit(xPos, yPos, menuRect))

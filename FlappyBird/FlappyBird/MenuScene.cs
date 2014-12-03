@@ -98,7 +98,7 @@ namespace FlappyBird
 					{
 						Touch.GetData(0).Clear();
 						//If screen is touched then switch to level one
-						SceneManager.Instance.SendSceneToFront(new LevelSceneNew(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
+						SceneManager.Instance.SendSceneToFront(new LevelOne(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
 					}
 					
 					if(ButtonHit(xPos, yPos, optionRect))
