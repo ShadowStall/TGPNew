@@ -20,8 +20,9 @@ namespace FlappyBird
 		private const int numberOfAsteroids = 5;
 		private Random rand;
 		private RandomNumberGenerator rand2;
+		private RandomNumberGenerator rand3;
 		private int[] asteroidYPos;
-		
+		private int[] asteroidXPos;
 		public AsteroidManager (Sce.PlayStation.HighLevel.GameEngine2D.Scene scene)
 		{
 			timeManaged = new TimeManager(2.5);
@@ -32,7 +33,7 @@ namespace FlappyBird
 			}
 			timeManaged.StartTimer();
 			timeManaged.Debugg();
-			SaveRandomNumbers();
+			SaveRandomYpos();
 		}
 		public void DestroyAsteroid()
 		{
@@ -56,20 +57,20 @@ namespace FlappyBird
 			}
 		}
 
-		public void HandleSpawnTest2()
+		public void HandleSpawn()
 		{
 			if(timeManaged.HasIntervalPassed())
 			{
-				
 				for(int i = 0; i< numberOfAsteroids; i++)
 					{
-						SaveRandomNumbers();
-						asteroidArray[i].SpawnAsteroid(asteroidYPos[i]);	
+						SaveRandomYpos();
+						SaveRandomXpos();
+						asteroidArray[i].SpawnAsteroid(asteroidXPos[i],asteroidYPos[i]);	
 						asteroidArray[i].setAlive(true);
 					}
 			}
 		}
-		private void SaveRandomNumbers()
+		private void SaveRandomYpos()
 		{
 			asteroidYPos = new int[numberOfAsteroids];
 			rand2 = new RandomNumberGenerator(500, numberOfAsteroids);
@@ -78,6 +79,18 @@ namespace FlappyBird
 			{
 				asteroidYPos[i] = (int) randomYPos[i];
 			}
+
+		}
+		private void SaveRandomXpos()
+		{
+			asteroidXPos = new int[numberOfAsteroids];
+			rand2 = new RandomNumberGenerator(100, numberOfAsteroids);
+			ArrayList randomXPos = rand2.GiveMeRandomNumbers();
+			for(int i = 0; i < numberOfAsteroids; i++)
+			{
+				asteroidXPos[i] = (int) randomXPos[i];
+			}
+
 		}
 		public static Asteroid[] getAsteroidArray()
 		{

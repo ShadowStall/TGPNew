@@ -56,6 +56,7 @@
     <Compile Include="OptionScene.cs" />
     <Compile Include="GameoverScene.cs" />
     <Compile Include="LevelOne.cs" />
+    <Compile Include="ScoreHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -96,5 +97,7 @@
     <Content Include="textures\HUD\healthbar_red.png" />
     <Content Include="Audio\ShipHit.wav" />
     <Content Include="Audio\AsteroidHit.wav" />
+    <Content Include="textures\HUD\healthbarRed2.png" />
+    <Content Include="textures\HUD\healthbarRed3.png" />
   </ItemGroup>
 </Project>

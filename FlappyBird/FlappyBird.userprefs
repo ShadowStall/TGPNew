@@ -1,18 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\AudioManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\RandomNumberGenerator.cs">
     <Files>
-      <File FileName="FlappyBird\Asteroid.cs" Line="104" Column="33" />
-      <File FileName="FlappyBird\Bird.cs" Line="59" Column="28" />
-      <File FileName="FlappyBird\AudioManager.cs" Line="77" Column="4" />
-      <File FileName="d:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\LevelOne.cs" Line="87" Column="1" />
+      <File FileName="FlappyBird\AsteroidManager.cs" Line="87" Column="40" />
+      <File FileName="FlappyBird\Asteroid.cs" Line="100" Column="4" />
+      <File FileName="FlappyBird\RandomNumberGenerator.cs" Line="33" Column="27" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="FlappyBird" expanded="True">
-            <Node name="Audio" expanded="True" />
-            <Node name="AudioManager.cs" selected="True" />
+            <Node name="RandomNumberGenerator.cs" selected="True" />
           </Node>
         </State>
       </Pad>

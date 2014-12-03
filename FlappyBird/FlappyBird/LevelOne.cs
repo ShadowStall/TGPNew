@@ -37,16 +37,20 @@ namespace FlappyBird
 		
 		private SpriteUV spriteLifeRed;
 		private TextureInfo	textureInfoRedLife;
+		//Score counter 
+		private Sce.PlayStation.HighLevel.UI.Label ScoreCountLabel;
+		private ScoreHelper score;
+		private int Score = 0;
+		
 		public LevelOne()
 		{
 			Initialize();
 		}
 		public void Initialize ()
 		{
-			
 			//gameScene = new Sce.PlayStation.HighLevel.GameEngine2D.Scene();
 			var screenSize = Director.Instance.GL.Context.GetViewport();
-			
+			score = new ScoreHelper();
 			Sce.PlayStation.HighLevel.UI.Scene scene = new Sce.PlayStation.HighLevel.UI.Scene();	
 			audio = new AudioManager();
 			audio.PlayBackgroundSound();
@@ -61,8 +65,13 @@ namespace FlappyBird
 			rocketCountLabel.SetPosition(40f, 12f);
 			rocketCountLabel.Text = rocketAmount.ToString();
 			
-			panel.AddChildLast(rocketCountLabel);
+			ScoreCountLabel = new Sce.PlayStation.HighLevel.UI.Label();
+			ScoreCountLabel.SetPosition(825f, 0f);
+			ScoreCountLabel.Text ="Score: "+ Score.ToString();
+		
 			
+			panel.AddChildLast(rocketCountLabel);
+			panel.AddChildLast(ScoreCountLabel);
 			uiScene.RootWidget.AddChildLast(panel);
 			
 			UISystem.SetScene(uiScene);
@@ -74,7 +83,7 @@ namespace FlappyBird
 			spriteLifeBack.Position = new Vector2(250f, 520f);
 		
 			//life bar red
-			textureInfoRedLife  = new TextureInfo("/Application/textures/HUD/healthbar_red.png");
+			textureInfoRedLife  = new TextureInfo("/Application/textures/HUD/healthbarRed3.png");
 			spriteLifeRed = new SpriteUV();
 			spriteLifeRed = new SpriteUV(textureInfoRedLife);	
 			spriteLifeRed.Quad.S = textureInfoBackLife.TextureSizef;
@@ -99,15 +108,15 @@ namespace FlappyBird
 		{	
 			switch(life)
 				{
-					case 90: spriteLifeRed.Scale = new Vector2(0.9f); break;
-					case 80: spriteLifeRed.Scale = new Vector2(0.8f); break;
-					case 70: spriteLifeRed.Scale = new Vector2(0.7f); break;
-					case 60: spriteLifeRed.Scale = new Vector2(0.6f); break;
-					case 50: spriteLifeRed.Scale = new Vector2(0.5f); break;
-					case 40: spriteLifeRed.Scale = new Vector2(0.4f); break;
-					case 30: spriteLifeRed.Scale = new Vector2(0.3f); break;
-					case 20: spriteLifeRed.Scale = new Vector2(0.2f); break;
-					case 10: spriteLifeRed.Scale = new Vector2(0.1f); break;
+					case 90: spriteLifeRed.Scale = new Vector2(0.9f,1.0f); break;
+					case 80: spriteLifeRed.Scale = new Vector2(0.8f, 1.0f); break;
+					case 70: spriteLifeRed.Scale = new Vector2(0.7f,1.0f); break;
+					case 60: spriteLifeRed.Scale = new Vector2(0.6f,1.0f); break;
+					case 50: spriteLifeRed.Scale = new Vector2(0.5f,1.0f); break;
+					case 40: spriteLifeRed.Scale = new Vector2(0.4f,1.0f); break;
+					case 30: spriteLifeRed.Scale = new Vector2(0.3f,1.0f); break;
+					case 20: spriteLifeRed.Scale = new Vector2(0.2f,1.0f); break;
+					case 10: spriteLifeRed.Scale = new Vector2(0.1f,1.0f); break;
 			}
 		}
 		
@@ -127,7 +136,7 @@ namespace FlappyBird
 				FireBullets(player);
 				FireRocket(player);
 				player.CheckCollision(AsteroidManager.getAsteroidArray());
-				asteroidManager.HandleSpawnTest2();
+				asteroidManager.HandleSpawn();
 				asteroidManager.Update();
 				UpdateRockets();
 				UpdateBullets();
@@ -149,7 +158,11 @@ namespace FlappyBird
 			for(int i=0; i<bulletList.Count; i++)
 			{
 				bulletList[i].Update();
-				bulletList[i].CheckCollision(AsteroidManager.getAsteroidArray(), this);
+			    bulletList[i].CheckCollision(AsteroidManager.getAsteroidArray(), this);	
+				if(bulletList[i].getIncrement())
+				{
+					UpdateScoreAmount();
+				}
 				if(bulletList[i].getX() > Director.Instance.GL.Context.GetViewport().Width)
 				{
 					bulletList.RemoveAt(i);
@@ -218,6 +231,11 @@ namespace FlappyBird
 		{
 			rocketAmount = rocketAmount - 1;
 			rocketCountLabel.Text = rocketAmount.ToString();
+		}
+		public void UpdateScoreAmount()
+		{
+		    Score += 10;
+			ScoreCountLabel.Text = "Score: "+ Score.ToString();
 		}
 			
 	}

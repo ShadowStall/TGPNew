@@ -44,24 +44,18 @@ namespace FlappyBird
 		{
 			return this.lifeCounter;
 		}
-		
 		public void CheckCollision(Asteroid [] asteroidArray)
 		{	
 			for(int i = 0; i<asteroidArray.Length; i++)
 			{
-				if(GetBirdBounds().Overlaps(asteroidArray[i].GetBounds())&& time == null)
+				if(GetBirdBounds().Overlaps(asteroidArray[i].GetBounds()))
 				{
-					time = new TimeManager(2.5);
 					lifeCounter -=10;
-				    Console.WriteLine("Collision Player has " + lifeCounter + " life left");
 					check = false;
-					//Play sound 
 					audio.PlayShipHitSound();
+					asteroidArray[i].detonateAsteroid();
 				}
-				if(time != null && time.HasIntervalPassed())
-				{
-					time = null;
-				}
+	
 			}
 			if(lifeCounter == 0)
 			{

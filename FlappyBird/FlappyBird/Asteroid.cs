@@ -75,9 +75,9 @@ namespace FlappyBird
 		{
 			return this.disposeOf = value;
 		}
-		public void SpawnAsteroid(int y)
+		public void SpawnAsteroid(int x, int y)
 		{	
-			sprite.Position = new Vector2(970, y);
+			sprite.Position = new Vector2(x+950, y);
 		}
 		public void setOnScreen(bool ok)
 		{
@@ -98,7 +98,6 @@ namespace FlappyBird
 				return true;
 			}
 		}
-	
 		public void detonateAsteroid()
 		{
 			audio.PlayAsteroidHitSound();
