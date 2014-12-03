@@ -51,6 +51,8 @@ namespace FlappyBird
 				{
 					Console.WriteLine("Collision Asteroid");
 					//Change asteroid sprite
+					asteroidArray[i].detonateAsteroid();
+					asteroidArray[i].setAlive(false);
 				
 				}
 			}

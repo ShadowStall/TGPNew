@@ -18,11 +18,9 @@ namespace FlappyBird
 		private bool alive;
 		private Bounds2 birdBounds;
 		public bool Alive { get{return alive;} set{alive = value;} }
-		//private AsteroidManager asteroidManager;
-		//Accessors.
-		//public SpriteUV Sprite { get{return sprite;} }
-		
-		//Public functions.
+		//Life 
+		private int lifeCOunter = 100;
+		private bool check = true;
 		public Bird (Scene scene)
 		{
 			textureInfo  = new TextureInfo("/Application/textures/player2.png");
@@ -30,14 +28,8 @@ namespace FlappyBird
 			sprite = new SpriteUV(textureInfo);	
 			sprite.Quad.S = textureInfo.TextureSizef;
 			sprite.Position = new Vector2(50.0f,Director.Instance.GL.Context.GetViewport().Height*0.5f);
-			//sprite.Pivot 	= new Vector2(0.5f,0.5f);
-			//sprite.Scale = new Vector2(0.2f);
 			alive = true;
-			//birdBounds = new Bounds2();
-			//asteroidManager = new AsteroidManager(scene);
-			//Add to the current scene.
 			scene.AddChild(sprite);
-			
 		}
 		public Bounds2 GetBirdBounds()
 		{
@@ -45,29 +37,44 @@ namespace FlappyBird
 			
 			return this.birdBounds;
 		}
-		public void CheckCollision(Asteroid [] asteroidArray)
+		public int getlifeCounter()
 		{
-			for(int i = 0; i<asteroidArray.Length; i++)
+			return this.lifeCOunter;
+		}
+		
+		public void CheckCollision(Asteroid [] asteroidArray)
+		{	
+			if (check)
 			{
-				//Console.WriteLine(asteroidArray[i].GetBounds());
-				if(GetBirdBounds().Overlaps(asteroidArray[i].GetBounds()))
+				for(int i = 0; i<asteroidArray.Length; i++)
 				{
-					alive = false;
-					Console.WriteLine("Collision");
+					if(GetBirdBounds().Overlaps(asteroidArray[i].GetBounds()))
+					{
+						lifeCOunter -=10;
+						Console.WriteLine("Collision Player has " + lifeCOunter + " life left");
+						check = false;
+					}
 				}
 			}
+		check = true;
+				if(lifeCOunter <= 0)
+				{
+					alive = false;
+				}
+		}
+		public void RestartCheckCollision()
+		{
+			this.check = true;
 		}
 		public void Dispose()
-			
 		{
 			textureInfo.Dispose();
-		}
-		
+		}		
 		public void Update(float deltaTime)
 		{			
-			ScreenCollision ();
+			ScreenCollision();
+			
 		}	
-		
 		public void Tapped()
 		{
 			if(!rise)

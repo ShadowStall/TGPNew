@@ -16,7 +16,8 @@ namespace FlappyBird
 		private bool active;
 		
 		public bool Active { get{return active;} set{active = value;} }
-		
+		private bool alive = true;
+ 		private SpriteUV explodingsprite;
 		
 		public Rocket (Scene scene)
 		{
@@ -53,6 +54,20 @@ namespace FlappyBird
 		{
 			return sprite.Position.Y;
 		}
+		public void detonateAsteroid()
+ 		{
+			sprite.Position = new Vector2(- 100, -100);
+
+ 		}
+				public void setAlive(bool peanut)
+		{
+			this.alive = peanut;
+		}
+		public bool getAlive()
+		{
+			return this.alive;
+		}
+		
 	}
 }
 

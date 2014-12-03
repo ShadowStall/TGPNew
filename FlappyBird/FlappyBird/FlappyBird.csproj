@@ -92,8 +92,7 @@
     <Content Include="textures\Back.jpg" />
     <Content Include="textures\Menu.png" />
     <Content Include="textures\Retry.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="LevelScene.cs" />
+    <Content Include="textures\HUD\healthbar_background.png" />
+    <Content Include="textures\HUD\healthbar_red.png" />
   </ItemGroup>
 </Project>
