@@ -24,7 +24,7 @@ namespace FlappyBird
 		
 		public AsteroidManager (Sce.PlayStation.HighLevel.GameEngine2D.Scene scene)
 		{
-			timeManaged = new TimeManager(3.5);
+			timeManaged = new TimeManager(2.5);
 			asteroidArray = new Asteroid[numberOfAsteroids];					//Allocating memory for numberOfAsteroids
 			for(int i = 0; i < numberOfAsteroids; i++)
 			{

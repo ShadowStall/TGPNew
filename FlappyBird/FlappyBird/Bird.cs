@@ -19,10 +19,13 @@ namespace FlappyBird
 		private Bounds2 birdBounds;
 		public bool Alive { get{return alive;} set{alive = value;} }
 		//Life 
-		private int lifeCOunter = 100;
+		private int lifeCounter = 100;
 		private bool check = true;
+		private TimeManager time = null; 
+		private AudioManager audio;
 		public Bird (Scene scene)
 		{
+			audio = new AudioManager();
 			textureInfo  = new TextureInfo("/Application/textures/player2.png");
 			sprite = new SpriteUV();
 			sprite = new SpriteUV(textureInfo);	
@@ -39,28 +42,31 @@ namespace FlappyBird
 		}
 		public int getlifeCounter()
 		{
-			return this.lifeCOunter;
+			return this.lifeCounter;
 		}
 		
 		public void CheckCollision(Asteroid [] asteroidArray)
 		{	
-			if (check)
+			for(int i = 0; i<asteroidArray.Length; i++)
 			{
-				for(int i = 0; i<asteroidArray.Length; i++)
+				if(GetBirdBounds().Overlaps(asteroidArray[i].GetBounds())&& time == null)
 				{
-					if(GetBirdBounds().Overlaps(asteroidArray[i].GetBounds()))
-					{
-						lifeCOunter -=10;
-						Console.WriteLine("Collision Player has " + lifeCOunter + " life left");
-						check = false;
-					}
+					time = new TimeManager(2.5);
+					lifeCounter -=10;
+				    Console.WriteLine("Collision Player has " + lifeCounter + " life left");
+					check = false;
+					//Play sound 
+					audio.PlayShipHitSound();
+				}
+				if(time != null && time.HasIntervalPassed())
+				{
+					time = null;
 				}
 			}
-		check = true;
-				if(lifeCOunter <= 0)
-				{
-					alive = false;
-				}
+			if(lifeCounter == 0)
+			{
+				alive = false;
+			}
 		}
 		public void RestartCheckCollision()
 		{
