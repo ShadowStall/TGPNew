@@ -16,7 +16,7 @@ namespace FlappyBird
 	{	
 		private Sce.PlayStation.HighLevel.UI.Scene uiScene;
 		private Sce.PlayStation.HighLevel.UI.Label rocketCountLabel;
-		private Bird	player;
+		private Bird player;
 		private Background background;
 		private int rocketAmount = 10;
 		private bool TriangleDown = false;
@@ -31,7 +31,12 @@ namespace FlappyBird
 		private AsteroidManager asteroidManager;
 		//Audio Manager
 		private AudioManager audio;
+		//Life Counter
+		private SpriteUV spriteLifeBack;
+		private TextureInfo	textureInfoBackLife;
 		
+		private SpriteUV spriteLifeRed;
+		private TextureInfo	textureInfoRedLife;
 		public LevelSceneNew()
 		{
 			Initialize();
@@ -61,6 +66,20 @@ namespace FlappyBird
 			uiScene.RootWidget.AddChildLast(panel);
 			
 			UISystem.SetScene(uiScene);
+			//Life Bar
+			textureInfoBackLife  = new TextureInfo("/Application/textures/HUD/healthbar_background.png");
+			spriteLifeBack = new SpriteUV();
+			spriteLifeBack = new SpriteUV(textureInfoBackLife);	
+			spriteLifeBack.Quad.S = textureInfoBackLife.TextureSizef;
+			spriteLifeBack.Position = new Vector2(250f, 520f);
+		
+			//life bar red
+			textureInfoRedLife  = new TextureInfo("/Application/textures/HUD/healthbar_red.png");
+			spriteLifeRed = new SpriteUV();
+			spriteLifeRed = new SpriteUV(textureInfoRedLife);	
+			spriteLifeRed.Quad.S = textureInfoBackLife.TextureSizef;
+			spriteLifeRed.Position = new Vector2(250f, 520f);
+		
 			
 			background = new Background(this);
 			bulletList = new List<Bullet>();
@@ -73,10 +92,23 @@ namespace FlappyBird
 			this.Camera.SetViewFromViewport();
 			Scheduler.Instance.ScheduleUpdateForTarget(this,0,false);
 			this.RegisterDisposeOnExitRecursive();			
-			
+			this.AddChild(spriteLifeBack);
+			this.AddChild(spriteLifeRed);
 		}
-		public void addContent()
+		public void UpdateLife(int life)
 		{	
+			switch(life)
+				{
+					case 90: spriteLifeRed.Scale = new Vector2(0.9f); break;
+					case 80: spriteLifeRed.Scale = new Vector2(0.8f); break;
+					case 70: spriteLifeRed.Scale = new Vector2(0.7f); break;
+					case 60: spriteLifeRed.Scale = new Vector2(0.6f); break;
+					case 50: spriteLifeRed.Scale = new Vector2(0.5f); break;
+					case 40: spriteLifeRed.Scale = new Vector2(0.4f); break;
+					case 30: spriteLifeRed.Scale = new Vector2(0.3f); break;
+					case 20: spriteLifeRed.Scale = new Vector2(0.2f); break;
+					case 10: spriteLifeRed.Scale = new Vector2(0.1f); break;
+			}
 		}
 		
 		public override void OnEnter()
@@ -89,6 +121,7 @@ namespace FlappyBird
 			base.Update(dt);
 			if(player.Alive == true)
 			{
+				UpdateLife(player.getlifeCounter());
 				PlayerControls();
 				player.Update(0.0f);
 				FireBullets(player);
@@ -99,7 +132,7 @@ namespace FlappyBird
 				asteroidManager.Update();
 				UpdateRockets();
 				UpdateBullets();
-				background.Update(0.0f);				
+				background.Update(0.0f);
 			}
 			if(player.Alive == false)
 			{
