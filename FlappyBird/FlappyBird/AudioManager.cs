@@ -39,6 +39,10 @@ namespace FlappyBird
 			winamp.Stop();
 			
 		}
+		public void StopBackgroundMusic()
+		{
+			bgmPlayerLvl1.Stop();
+		}
 		public void PlayBackgroundSound()
 		{
 			if (bgmPlayerLvl1 == null)
@@ -75,6 +79,18 @@ namespace FlappyBird
 			}
 				winampHitAsteroid.Play();
 		}	
+		public void PlayShitDyingSound()
+		{
+			if( winampHitAsteroid == null)
+			{
+				//set up fx
+				asteroidHitSound = new Sound("/Application/Audio/ShipDying.wav");//waw only
+				winampHitAsteroid = asteroidHitSound.CreatePlayer();
+				winampHitAsteroid.Volume = 10.0f;
+				winampHitAsteroid.PlaybackRate = 2.0f;
+			}
+				winampHitAsteroid.Play();
+		}
 	}
 
 }

@@ -57,7 +57,7 @@ namespace FlappyBird
 						solidFade.Duration = duration;
 						Director.Instance.ReplaceScene(solidFade);
 						break;
-				
+				 
 					default:	
 						throw new Exception("Expected to transition to a scene - error occured. Please check the stack trace to SceneManager.SendSceneToFront()");
 						break;

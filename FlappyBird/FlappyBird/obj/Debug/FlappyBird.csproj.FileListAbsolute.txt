@@ -774,3 +774,5 @@ D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\HUD\healthbarRed2.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\HUD\healthbarRed3.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\HUD\healthbarRed3.png
+D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Audio\ShipDying.wav
+D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Audio\ShipDying.wav

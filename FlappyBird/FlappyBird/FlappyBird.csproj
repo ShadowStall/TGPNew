@@ -99,5 +99,6 @@
     <Content Include="Audio\AsteroidHit.wav" />
     <Content Include="textures\HUD\healthbarRed2.png" />
     <Content Include="textures\HUD\healthbarRed3.png" />
+    <Content Include="Audio\ShipDying.wav" />
   </ItemGroup>
 </Project>

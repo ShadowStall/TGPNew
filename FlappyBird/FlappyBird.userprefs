@@ -1,16 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="d:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\AudioManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\AsteroidManager.cs">
     <Files>
-      <File FileName="FlappyBird\AsteroidManager.cs" Line="75" Column="46" />
-      <File FileName="FlappyBird\Asteroid.cs" Line="80" Column="38" />
-      <File FileName="d:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\AudioManager.cs" Line="40" Column="4" />
+      <File FileName="FlappyBird\Asteroid.cs" Line="18" Column="34" />
+      <File FileName="FlappyBird\AsteroidManager.cs" Line="75" Column="4" />
+      <File FileName="FlappyBird\RandomNumberGenerator.cs" Line="29" Column="50" />
+      <File FileName="d:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\AudioManager.cs" Line="29" Column="71" />
+      <File FileName="FlappyBird\LevelOne.cs" Line="150" Column="82" />
+      <File FileName="FlappyBird\Bird.cs" Line="74" Column="7" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="FlappyBird" expanded="True">
-            <Node name="AudioManager.cs" selected="True" />
+            <Node name="AsteroidManager.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -25,5 +28,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="FlappyBird\AsteroidManager.cs" line="95" offsetX="581" offsetY="1581" expression="asteroidYPos" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>

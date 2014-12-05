@@ -65,21 +65,21 @@ namespace FlappyBird
 					{
 						SaveRandomYpos();
 						SaveRandomXpos();
-						asteroidArray[i].SpawnAsteroid(asteroidXPos[i],asteroidYPos[i]);	
+						asteroidArray[i].SpawnAsteroid(asteroidXPos[i],asteroidYPos[i]);
 						asteroidArray[i].setAlive(true);
 					}
+				
 			}
 		}
 		private void SaveRandomYpos()
-		{
+		{		
+			int screenHeight = 544;
+			int a = screenHeight/numberOfAsteroids;
 			asteroidYPos = new int[numberOfAsteroids];
-			rand2 = new RandomNumberGenerator(500, numberOfAsteroids);
-			ArrayList randomYPos = rand2.GiveMeRandomNumbers();
-			for(int i = 0; i < numberOfAsteroids; i++)
+			for (int i =0 ; i< numberOfAsteroids; i++)
 			{
-				asteroidYPos[i] = (int) randomYPos[i];
+				asteroidYPos[i]=(a*(i+1));
 			}
-
 		}
 		private void SaveRandomXpos()
 		{
@@ -90,6 +90,7 @@ namespace FlappyBird
 			{
 				asteroidXPos[i] = (int) randomXPos[i];
 			}
+			
 
 		}
 		public static Asteroid[] getAsteroidArray()

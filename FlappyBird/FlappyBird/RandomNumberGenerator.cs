@@ -26,17 +26,18 @@ namespace FlappyBird
 				rndNumber = new Random(DateTime.Now.Millisecond);
                 number = rndNumber.Next(1, max + 1) + 20;
 
-                if (!lstNumbers.Contains(number))
+                if (!lstNumbers.Contains(number ))
                 {
                     lstNumbers.Add(number);	
 					count++;
                 }         
             } while (count < NumberOfAsteroids); 
-        }
+		}
 		public ArrayList GiveMeRandomNumbers()
 		{
 			return lstNumbers;
 		}
+		
     }
 	
 }
