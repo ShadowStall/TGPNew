@@ -28,7 +28,7 @@ namespace FlappyBird
 				//set up fx
 				LazerSound = new Sound("/Application/Audio/Lazer1.wav");//waw only
 				winamp = LazerSound.CreatePlayer();
-				winamp.Volume = 10.0f;
+				winamp.Volume = GameManager.Instance.SoundFXVol;
 				winamp.PlaybackRate = 2.0f;
 			}
 			winamp.Play();
@@ -58,6 +58,7 @@ namespace FlappyBird
 			winamp.Stop();
 			
 		}
+
 		public void StopBackgroundMusic()
 		{
 			if (bgmPlayerLvl1 != null)
@@ -65,6 +66,7 @@ namespace FlappyBird
 				bgmPlayerLvl1.Stop();
 			}
 		}
+
 		public void PlayBackgroundSound()
 		{
 			if (bgmLvl1 == null)
@@ -76,11 +78,14 @@ namespace FlappyBird
 			if(bgmPlayerLvl1 == null)
 			{
 				bgmPlayerLvl1 = bgmLvl1.CreatePlayer();
-				bgmPlayerLvl1.Volume = 10.0f;
+				bgmPlayerLvl1.Volume = GameManager.Instance.MusicVol;
 				bgmPlayerLvl1.Loop = true;
 			}
 			bgmPlayerLvl1.Play();
 		}
+		
+
+		
 		public void PlayShipHitSound()
 		{
 			if( winampHitShip == null)
@@ -88,7 +93,7 @@ namespace FlappyBird
 				//set up fx
 				shipHitSound = new Sound("/Application/Audio/ShipHit.wav");//waw only
 				winampHitShip = shipHitSound.CreatePlayer();
-				winampHitShip.Volume = 10.0f;
+				winampHitShip.Volume = GameManager.Instance.SoundFXVol;
 				winampHitShip.PlaybackRate = 2.0f;
 			}
 				winampHitShip.Play();
@@ -100,7 +105,7 @@ namespace FlappyBird
 				//set up fx
 				asteroidHitSound = new Sound("/Application/Audio/AsteroidHit.wav");//waw only
 				winampHitAsteroid = asteroidHitSound.CreatePlayer();
-				winampHitAsteroid.Volume = 10.0f;
+				winampHitAsteroid.Volume = GameManager.Instance.SoundFXVol;
 				winampHitAsteroid.PlaybackRate = 2.0f;
 			}
 				winampHitAsteroid.Play();
@@ -112,7 +117,7 @@ namespace FlappyBird
 				//set up fx
 				asteroidHitSound = new Sound("/Application/Audio/ShipDying.wav");//waw only
 				winampHitAsteroid = asteroidHitSound.CreatePlayer();
-				winampHitAsteroid.Volume = 10.0f;
+				winampHitAsteroid.Volume = GameManager.Instance.SoundFXVol;
 				winampHitAsteroid.PlaybackRate = 2.0f;
 			}
 				winampHitAsteroid.Play();

@@ -25,8 +25,9 @@ namespace FlappyBird
 		
 		private Rectangle backRect;
 		private TouchStatus touchStatus, lastTouchStatus;
+		private Sce.PlayStation.HighLevel.UI.Label optionsLabel, brightnessLabel, musicLabel, soundFXLabel;
 		
-		private Slider musicVolSlider, soundVolSlider, brightnessSlider, contrastSlider;
+		private Slider musicVolSlider, soundVolSlider, brightnessSlider;
 		
 		public OptionScene ()
 		{
@@ -35,6 +36,11 @@ namespace FlappyBird
 			screenHeight = screenSize.Height;
 			
 			Sce.PlayStation.HighLevel.UI.Scene scene = new Sce.PlayStation.HighLevel.UI.Scene();
+			
+			optionsLabel = new Sce.PlayStation.HighLevel.UI.Label();
+			optionsLabel.SetPosition(screenSize.Width/2 - 50, screenSize.Height/4 - 50);
+			optionsLabel.Text = "Options";
+			scene.RootWidget.AddChildLast(optionsLabel);
 			
 			ImageBox back = new ImageBox();
 			back.Image = new ImageAsset("/Application/textures/Back.jpg");
@@ -49,8 +55,6 @@ namespace FlappyBird
 			InitaliseSliders(scene);
 			musicVolSlider.Value = GameManager.Instance.MusicVol * 100;
 			soundVolSlider.Value = GameManager.Instance.SoundFXVol * 100;
-			brightnessSlider.Value = GameManager.Instance.Brightness * 100;
-			contrastSlider.Value = GameManager.Instance.Contrast * 100;
 			
 			_texture = new Texture2D(screenSize.Width, screenSize.Height, false, PixelFormat.Rgba);
 			_ti = new TextureInfo(_texture);
@@ -70,10 +74,6 @@ namespace FlappyBird
 			this.RegisterDisposeOnExitRecursive();
 		}
 		
-		~OptionScene()
-		{
-		}
-		
 		public override void OnEnter()
 		{
 			base.OnEnter();
@@ -88,8 +88,6 @@ namespace FlappyBird
 			UISystem.Update(touches);
 			GameManager.Instance.MusicVol = musicVolSlider.Value/100;
 			GameManager.Instance.SoundFXVol = soundVolSlider.Value/100;
-			GameManager.Instance.Brightness = brightnessSlider.Value/100;
-			GameManager.Instance.Contrast = contrastSlider.Value/100;
 			
 			foreach(TouchData data in touches)
 			{
@@ -129,7 +127,7 @@ namespace FlappyBird
 		private void InitaliseSliders(Sce.PlayStation.HighLevel.UI.Scene scene)
 		{
 			musicVolSlider = new Slider();
-			musicVolSlider.SetPosition(screenWidth/10, 220);
+			musicVolSlider.SetPosition(screenWidth/2 - 175, 220);
             musicVolSlider.SetSize(350, 50);
             musicVolSlider.Anchors = Anchors.Height;
             musicVolSlider.Visible = true;
@@ -139,8 +137,13 @@ namespace FlappyBird
             musicVolSlider.Step = 1;
 			scene.RootWidget.AddChildLast(musicVolSlider);
 			
+			musicLabel = new Sce.PlayStation.HighLevel.UI.Label();
+			musicLabel.SetPosition(musicVolSlider.X + musicVolSlider.Width/4 , musicVolSlider.Y - 30);
+			musicLabel.Text = "Music Volume";
+			scene.RootWidget.AddChildLast(musicLabel);
+			
 			soundVolSlider = new Slider();
-			soundVolSlider.SetPosition(screenWidth/10, 320);
+			soundVolSlider.SetPosition(screenWidth/2 - 175, 320);
             soundVolSlider.SetSize(350, 50);
             soundVolSlider.Anchors = Anchors.Height;
             soundVolSlider.Visible = true;
@@ -149,30 +152,12 @@ namespace FlappyBird
             soundVolSlider.Value = 100;
             soundVolSlider.Step = 1;
 			scene.RootWidget.AddChildLast(soundVolSlider);
-		
-			brightnessSlider = new Slider();
-			brightnessSlider.SetPosition(screenWidth/10 * 5 + 20, 220);
-            brightnessSlider.SetSize(362, 58);
-            brightnessSlider.Anchors = Anchors.Height;
-            brightnessSlider.Visible = true;
-			brightnessSlider.MinValue = 0;
-            brightnessSlider.MaxValue = 100;
-            brightnessSlider.Value = 100;
-            brightnessSlider.Step = 1;
-			scene.RootWidget.AddChildLast(brightnessSlider);
 			
-			contrastSlider = new Slider();
-			contrastSlider.SetPosition(screenWidth/10 * 5 + 20, 320);
-            contrastSlider.SetSize(362, 58);
-            contrastSlider.Anchors = Anchors.Height;
-            contrastSlider.Visible = true;
-			contrastSlider.MinValue = 0;
-            contrastSlider.MaxValue = 100;
-            contrastSlider.Value = 100;
-            contrastSlider.Step = 1;
-			scene.RootWidget.AddChildLast(contrastSlider);
+			soundFXLabel = new Sce.PlayStation.HighLevel.UI.Label();
+			soundFXLabel.SetPosition(soundVolSlider.X + soundVolSlider.Width/4 , soundVolSlider.Y - 30);
+			soundFXLabel.Text = "SoundFX Volume";
+			scene.RootWidget.AddChildLast(soundFXLabel);
 		}
-		
 	}
 }
 
