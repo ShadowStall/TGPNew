@@ -34,6 +34,25 @@ namespace FlappyBird
 			winamp.Play();
 		
 		}
+		public void Dispose()
+		{
+			if (bgmPlayerLvl1 != null)
+			{
+				bgmPlayerLvl1.Dispose();
+			}
+			if (winamp != null)
+			{	
+				winamp.Dispose();
+			}
+			if (shipHitSound!= null)
+			{
+				shipHitSound.Dispose();
+			}
+			if(bgmLvl1 != null)
+			{
+				bgmLvl1.Dispose();
+			}
+		}
 		public void StopLazerSound()
 		{
 			winamp.Stop();
@@ -41,14 +60,21 @@ namespace FlappyBird
 		}
 		public void StopBackgroundMusic()
 		{
-			bgmPlayerLvl1.Stop();
+			if (bgmPlayerLvl1 != null)
+			{
+				bgmPlayerLvl1.Stop();
+			}
 		}
 		public void PlayBackgroundSound()
 		{
-			if (bgmPlayerLvl1 == null)
+			if (bgmLvl1 == null)
 			{
 				//setup bgm 
 				bgmLvl1 = new Bgm("/Application/Audio/BGLoop.mp3"); //mp3 only
+		
+			}
+			if(bgmPlayerLvl1 == null)
+			{
 				bgmPlayerLvl1 = bgmLvl1.CreatePlayer();
 				bgmPlayerLvl1.Volume = 10.0f;
 				bgmPlayerLvl1.Loop = true;
@@ -79,7 +105,7 @@ namespace FlappyBird
 			}
 				winampHitAsteroid.Play();
 		}	
-		public void PlayShitDyingSound()
+		public void PlayShipDyingSound()
 		{
 			if( winampHitAsteroid == null)
 			{

@@ -145,11 +145,13 @@ namespace FlappyBird
 			if(player.Alive == false)
 			{
 				//Ship explodes
-				audio.StopBackgroundMusic();
-				audio.PlayShitDyingSound();
+				//audio.StopBackgroundMusic();
+				audio.PlayShipDyingSound();
 				//play end game if died play something if finished levrel play something else
 				SceneManager.Instance.SendSceneToFront(new GameoverScene(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
+			    audio.Dispose();
 			}
+		
 		}
 				
 		public override void Draw()

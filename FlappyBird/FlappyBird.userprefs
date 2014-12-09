@@ -1,19 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\AsteroidManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="C:\Program Files (x86)\MSBuild\Sce\Sce.Psm.Common.targets">
     <Files>
-      <File FileName="FlappyBird\Asteroid.cs" Line="18" Column="34" />
-      <File FileName="FlappyBird\AsteroidManager.cs" Line="75" Column="4" />
-      <File FileName="FlappyBird\RandomNumberGenerator.cs" Line="29" Column="50" />
-      <File FileName="d:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\AudioManager.cs" Line="29" Column="71" />
-      <File FileName="FlappyBird\LevelOne.cs" Line="150" Column="82" />
-      <File FileName="FlappyBird\Bird.cs" Line="74" Column="7" />
+      <File FileName="d:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\AudioManager.cs" Line="69" Column="37" />
+      <File FileName="FlappyBird\LevelOne.cs" Line="149" Column="11" />
+      <File FileName="FlappyBird\SceneManager.cs" Line="63" Column="7" />
+      <File FileName="FlappyBird\GameoverScene.cs" Line="100" Column="58" />
+      <File FileName="FlappyBird\Bird.cs" Line="22" Column="31" />
+      <File FileName="FlappyBird\AppMain.cs" Line="16" Column="17" />
+      <File FileName="C:\Program Files (x86)\MSBuild\Sce\Sce.Psm.Common.targets" Line="191" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="FlappyBird" expanded="True">
-            <Node name="AsteroidManager.cs" selected="True" />
+            <Node name="Asteroid.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -26,7 +27,9 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="d:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\AudioManager.cs" line="54" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="FlappyBird\AsteroidManager.cs" line="95" offsetX="581" offsetY="1581" expression="asteroidYPos" liveUpdate="False" />
