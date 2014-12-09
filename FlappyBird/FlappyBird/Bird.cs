@@ -19,7 +19,7 @@ namespace FlappyBird
 		private Bounds2 birdBounds;
 		public bool Alive { get{return alive;} set{alive = value;} }
 		//Life 
-		private int lifeCounter = 10;
+		private int lifeCounter = 100;
 		private bool check = true;
 		private TimeManager time = null; 
 		private AudioManager audio;

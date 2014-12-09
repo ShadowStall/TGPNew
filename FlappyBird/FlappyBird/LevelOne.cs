@@ -144,8 +144,6 @@ namespace FlappyBird
 			}
 			if(player.Alive == false)
 			{
-				//Ship explodes
-				//audio.StopBackgroundMusic();
 				audio.PlayShipDyingSound();
 				//play end game if died play something if finished levrel play something else
 				SceneManager.Instance.SendSceneToFront(new GameoverScene(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
@@ -180,7 +178,11 @@ namespace FlappyBird
 			for(int i=0; i<rocketList.Count; i++)
 			{	
 				rocketList[i].Update();
-		
+				rocketList[i].CheckCollision(AsteroidManager.getAsteroidArray(), this);
+				if(rocketList[i].getIncrement())
+				{
+					UpdateScoreAmount();
+				}
 				if(rocketList[i].getX() > Director.Instance.GL.Context.GetViewport().Width)
 				{
 					rocketList.RemoveAt(i);
