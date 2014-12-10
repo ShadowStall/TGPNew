@@ -15,41 +15,29 @@ namespace FlappyBird
 		
 		public RandomNumberGenerator(int max, int NumberOfAsteroids)
         {
-            // Create an ArrayList object that will hold the numbers
             lstNumbers = new ArrayList();
-            // The Random class will be used to generate numbers
-			
             Random rndNumber = new Random(DateTime.Now.Millisecond);
-
-            // Generate a random number between 1 and the Max
             int number = rndNumber.Next(1, max + 1);
-            // Add this first random number to the list
             lstNumbers.Add(number);
-            // Set a count of numbers to 0 to start
             int count = 0;
 
-            do // Repeatedly...
+            do 
             {
-                // ... generate a random number between 1 and the Max
 				rndNumber = new Random(DateTime.Now.Millisecond);
                 number = rndNumber.Next(1, max + 1) + 20;
 
-                // If the newly generated number in not yet in the list...
-                if (!lstNumbers.Contains(number))
+                if (!lstNumbers.Contains(number ))
                 {
-                    // ... add it
-                    lstNumbers.Add(number);
-					
+                    lstNumbers.Add(number);	
 					count++;
                 }         
-            } while (count < NumberOfAsteroids); // Do that again
-
-            // Once the list is built, return it
-        }
+            } while (count < NumberOfAsteroids); 
+		}
 		public ArrayList GiveMeRandomNumbers()
 		{
 			return lstNumbers;
 		}
+		
     }
 	
 }

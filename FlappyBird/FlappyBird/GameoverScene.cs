@@ -25,6 +25,7 @@ namespace FlappyBird
 		
 		private Rectangle retryRect, menuRect;
 		private TouchStatus touchStatus, lastTouchStatus;
+		private Sce.PlayStation.HighLevel.UI.Label gameoverLabel;
 		
 		public GameoverScene()
 		{
@@ -33,6 +34,11 @@ namespace FlappyBird
 			screenHeight = screenSize.Height;
 			
 			Sce.PlayStation.HighLevel.UI.Scene scene = new Sce.PlayStation.HighLevel.UI.Scene();
+			
+			gameoverLabel = new Sce.PlayStation.HighLevel.UI.Label();
+			gameoverLabel.SetPosition(screenSize.Width/2 - 50, screenSize.Height/4);
+			gameoverLabel.Text = "Gameover";
+			scene.RootWidget.AddChildLast(gameoverLabel);
 			
 			ImageBox retry = new ImageBox();
 			retry.Image = new ImageAsset("/Application/textures/Retry.png");
@@ -65,15 +71,10 @@ namespace FlappyBird
 			background.Position = new Vector2(0, 0);
 			this.AddChild(background);//adds background
 
-			UISystem.SetScene(scene);//, null);
+			UISystem.SetScene(scene);
 			this.Camera.SetViewFromViewport();
 			Scheduler.Instance.ScheduleUpdateForTarget(this,0,false);
 			this.RegisterDisposeOnExitRecursive();
-		}
-		
-		~GameoverScene()
-		{
-	
 		}
 		
 		public override void OnEnter()
@@ -97,7 +98,7 @@ namespace FlappyBird
 					if(ButtonHit(xPos, yPos, retryRect))
 					{
 						Touch.GetData(0).Clear();
-						SceneManager.Instance.SendSceneToFront(new LevelSceneNew(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
+						SceneManager.Instance.SendSceneToFront(new LevelOne(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
 					}
 					
 					if(ButtonHit(xPos, yPos, menuRect))

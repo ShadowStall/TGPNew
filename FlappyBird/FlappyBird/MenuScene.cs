@@ -65,15 +65,10 @@ namespace FlappyBird
 			background.Position = new Vector2(0, 0);
 			this.AddChild(background);//adds background
 
-			UISystem.SetScene(scene);//, null);
+			UISystem.SetScene(scene);
 			this.Camera.SetViewFromViewport();
 			Scheduler.Instance.ScheduleUpdateForTarget(this,0,false);
 			this.RegisterDisposeOnExitRecursive();
-		}
-		
-		~MenuScene()
-		{
-	
 		}
 		
 		public override void OnEnter()
@@ -98,7 +93,7 @@ namespace FlappyBird
 					{
 						Touch.GetData(0).Clear();
 						//If screen is touched then switch to level one
-						SceneManager.Instance.SendSceneToFront(new LevelSceneNew(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
+						SceneManager.Instance.SendSceneToFront(new LevelOne(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
 					}
 					
 					if(ButtonHit(xPos, yPos, optionRect))

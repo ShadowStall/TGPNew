@@ -17,13 +17,14 @@ namespace FlappyBird
 		private TextureInfo textureInfo;
 		
 		private bool active;
-		
+		private bool increment = false;
 		public bool Active { get{return active;} set{active = value;} }
 		private Bounds2 bulletBounds ;
-		
+		private ScoreHelper score;
 		
 		public Bullet (Scene scene)
 		{
+			score = new ScoreHelper();
 			textureInfo  = new TextureInfo("/Application/textures/bullet2.png");
 			sprite	 		= new SpriteUV();
 			sprite 			= new SpriteUV(textureInfo);	
@@ -46,14 +47,24 @@ namespace FlappyBird
 		{
 			for(int i = 0; i<asteroidArray.Length; i++)
 			{
-				Console.WriteLine(asteroidArray[i].GetBounds());
+				
 				if(GetBounds().Overlaps(asteroidArray[i].GetBounds()))
 				{
-					Console.WriteLine("Collision Asteroid");
-					//Change asteroid sprite
-				
+					asteroidArray[i].detonateAsteroid();
+					asteroidArray[i].setAlive(false);
+					increment = true;
+					return;
 				}
+				else
+				{
+					increment = false;
+				}
+				
 			}
+		}
+		public bool getIncrement()
+		{
+			return this.increment;
 		}
 		public void Dispose()
 		{

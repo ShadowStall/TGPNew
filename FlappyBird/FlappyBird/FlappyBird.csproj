@@ -53,9 +53,10 @@
     <Compile Include="MenuScene.cs" />
     <Compile Include="SceneManager.cs" />
     <Compile Include="AppMain.cs" />
-    <Compile Include="LevelSceneNew.cs" />
     <Compile Include="OptionScene.cs" />
     <Compile Include="GameoverScene.cs" />
+    <Compile Include="LevelOne.cs" />
+    <Compile Include="ScoreHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -92,8 +93,12 @@
     <Content Include="textures\Back.jpg" />
     <Content Include="textures\Menu.png" />
     <Content Include="textures\Retry.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="LevelScene.cs" />
+    <Content Include="textures\HUD\healthbar_background.png" />
+    <Content Include="textures\HUD\healthbar_red.png" />
+    <Content Include="Audio\ShipHit.wav" />
+    <Content Include="Audio\AsteroidHit.wav" />
+    <Content Include="textures\HUD\healthbarRed2.png" />
+    <Content Include="textures\HUD\healthbarRed3.png" />
+    <Content Include="Audio\ShipDying.wav" />
   </ItemGroup>
 </Project>

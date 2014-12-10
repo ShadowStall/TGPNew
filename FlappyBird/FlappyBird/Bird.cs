@@ -18,26 +18,21 @@ namespace FlappyBird
 		private bool alive;
 		private Bounds2 birdBounds;
 		public bool Alive { get{return alive;} set{alive = value;} }
-		//private AsteroidManager asteroidManager;
-		//Accessors.
-		//public SpriteUV Sprite { get{return sprite;} }
-		
-		//Public functions.
+		//Life 
+		private int lifeCounter = 100;
+		private bool check = true;
+		private TimeManager time = null; 
+		private AudioManager audio;
 		public Bird (Scene scene)
 		{
+			audio = new AudioManager();
 			textureInfo  = new TextureInfo("/Application/textures/player2.png");
 			sprite = new SpriteUV();
 			sprite = new SpriteUV(textureInfo);	
 			sprite.Quad.S = textureInfo.TextureSizef;
 			sprite.Position = new Vector2(50.0f,Director.Instance.GL.Context.GetViewport().Height*0.5f);
-			//sprite.Pivot 	= new Vector2(0.5f,0.5f);
-			//sprite.Scale = new Vector2(0.2f);
 			alive = true;
-			//birdBounds = new Bounds2();
-			//asteroidManager = new AsteroidManager(scene);
-			//Add to the current scene.
 			scene.AddChild(sprite);
-			
 		}
 		public Bounds2 GetBirdBounds()
 		{
@@ -45,29 +40,41 @@ namespace FlappyBird
 			
 			return this.birdBounds;
 		}
-		public void CheckCollision(Asteroid [] asteroidArray)
+		public int getlifeCounter()
 		{
+			return this.lifeCounter;
+		}
+		public void CheckCollision(Asteroid [] asteroidArray)
+		{	
 			for(int i = 0; i<asteroidArray.Length; i++)
 			{
-				//Console.WriteLine(asteroidArray[i].GetBounds());
 				if(GetBirdBounds().Overlaps(asteroidArray[i].GetBounds()))
 				{
-					alive = false;
-					Console.WriteLine("Collision");
+					lifeCounter -=10;
+					check = false;
+					audio.PlayShipHitSound();
+					asteroidArray[i].detonateAsteroid();
 				}
+	
+			}
+			if(lifeCounter == 0)
+			{
+				alive = false;
 			}
 		}
+		public void RestartCheckCollision()
+		{
+			this.check = true;
+		}
 		public void Dispose()
-			
 		{
 			textureInfo.Dispose();
-		}
-		
+		}		
 		public void Update(float deltaTime)
 		{			
-			ScreenCollision ();
+			ScreenCollision();
+			
 		}	
-		
 		public void Tapped()
 		{
 			if(!rise)

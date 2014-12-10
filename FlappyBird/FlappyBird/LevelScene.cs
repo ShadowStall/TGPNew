@@ -109,21 +109,21 @@ namespace FlappyBird
 		
 		public override void Update(float dt)
 		{
-			base.Update(dt);
-			PlayerControls();
-			player.Update(0.0f);
-			FireBullets(player);
-			FireRocket(player);
-			player.CheckCollision(AsteroidManager.getAsteroidArray());
+		//	base.Update(dt);
+		//	PlayerControls();
+			//player.Update(0.0f);
+		//	FireBullets(player);
+		//	FireRocket(player);
+		//	player.CheckCollision(AsteroidManager.getAsteroidArray());
 			
-			asteroidManager.HandleSpawnTest2();
-			asteroidManager.Update();
-			UpdateRockets();
-			UpdateBullets();
-			if(player.Alive)
-			{
-				background.Update(0.0f);				
-			}
+		    //asteroidManager.HandleSpawnTest2();
+			//asteroidManager.Update();
+			//UpdateRockets();
+			//UpdateBullets();
+		//	if(player.Alive)
+		//	{
+		//		background.Update(0.0f);				
+		//	}
 		}
 				
 		public override void Draw()

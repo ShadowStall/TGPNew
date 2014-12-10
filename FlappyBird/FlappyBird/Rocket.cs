@@ -14,9 +14,11 @@ namespace FlappyBird
 		private TextureInfo textureInfo;
 		
 		private bool active;
-		
+		private bool increment = false;
 		public bool Active { get{return active;} set{active = value;} }
-		
+		private bool alive = true;
+ 		private SpriteUV explodingsprite;
+		private Bounds2 rocketBounds;
 		
 		public Rocket (Scene scene)
 		{
@@ -26,11 +28,22 @@ namespace FlappyBird
 			sprite.Quad.S 	= textureInfo.TextureSizef;
 			active = false;
 			sprite.Scale = new Vector2(0.5f);
+			rocketBounds = new Bounds2();
 			scene.AddChild(sprite);
+		}
+		public bool getIncrement()
+		{
+			return this.increment;
 		}
 		public void Dispose()
 		{
 			textureInfo.Dispose();
+		}
+		public Bounds2 GetBounds()
+		{
+			sprite.GetContentWorldBounds(ref rocketBounds);
+			
+			return this.rocketBounds;
 		}
 		public void Fire(Vector2 shipPosition)
 		{
@@ -45,6 +58,25 @@ namespace FlappyBird
 				sprite.Position = new Vector2(sprite.Position.X + 10.5f, sprite.Position.Y);
 			}
 		}
+		public void CheckCollision(Asteroid [] asteroidArray, Scene scene)
+		{
+			for(int i = 0; i<asteroidArray.Length; i++)
+			{
+				
+				if(GetBounds().Overlaps(asteroidArray[i].GetBounds()))
+				{
+					asteroidArray[i].detonateAsteroid();
+					asteroidArray[i].setAlive(false);
+					increment = true;
+					return;
+				}
+				else
+				{
+					increment = false;
+				}
+				
+			}
+		}
 		public float getX()
 		{
 			return sprite.Position.X;
@@ -53,6 +85,20 @@ namespace FlappyBird
 		{
 			return sprite.Position.Y;
 		}
+		public void detonateAsteroid()
+ 		{
+			sprite.Position = new Vector2(- 100, -100);
+
+ 		}
+		public void setAlive(bool peanut)
+		{
+			this.alive = peanut;
+		}
+		public bool getAlive()
+		{
+			return this.alive;
+		}
+		
 	}
 }
 
