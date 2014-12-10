@@ -710,12 +710,10 @@ D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bottompipe.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bird.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bullet.png
-D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\backgroundV2.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\rocket.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\HUD\BulletCounterSymbol.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\player2.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bullet2.png
-D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\asteroid.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\asteroid2.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Audio\BGLoop.mp3
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Audio\Lazer1.wav
@@ -748,12 +746,10 @@ D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bottompipe.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bird.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bullet.png
-D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\backgroundV2.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\rocket.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\HUD\BulletCounterSymbol.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\player2.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bullet2.png
-D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\asteroid.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\asteroid2.png
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Audio\BGLoop.mp3
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Audio\Lazer1.wav
@@ -778,3 +774,5 @@ D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\obj\Debug
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\obj\Debug\app.pdb
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Audio\rocketLaunch.wav
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Audio\rocketLaunch.wav
+D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\Background.png
+D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\Background.png

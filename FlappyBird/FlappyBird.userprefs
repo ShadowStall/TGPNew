@@ -1,6 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\AudioManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\SceneManager.cs">
     <Files>
       <File FileName="FlappyBird\LevelOne.cs" Line="230" Column="35" />
       <File FileName="FlappyBird\Rocket.cs" Line="52" Column="33" />
@@ -8,14 +8,13 @@
       <File FileName="FlappyBird\SceneManager.cs" Line="65" Column="7" />
       <File FileName="FlappyBird\Bird.cs" Line="133" Column="1" />
       <File FileName="FlappyBird\Asteroid.cs" Line="44" Column="4" />
-      <File FileName="FlappyBird\AudioManager.cs" Line="55" Column="5" />
+      <File FileName="FlappyBird\AudioManager.cs" Line="48" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="FlappyBird" expanded="True">
-            <Node name="Audio" expanded="True" />
-            <Node name="AudioManager.cs" selected="True" />
+            <Node name="SceneManager.cs" selected="True" />
           </Node>
         </State>
       </Pad>
