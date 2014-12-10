@@ -1,20 +1,22 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\SceneManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="C:\Program Files (x86)\MSBuild\Sce\Sce.Psm.Common.targets">
     <Files>
-      <File FileName="FlappyBird\LevelOne.cs" Line="230" Column="35" />
-      <File FileName="FlappyBird\Rocket.cs" Line="52" Column="33" />
-      <File FileName="FlappyBird\Bullet.cs" Line="20" Column="25" />
-      <File FileName="FlappyBird\SceneManager.cs" Line="65" Column="7" />
-      <File FileName="FlappyBird\Bird.cs" Line="133" Column="1" />
-      <File FileName="FlappyBird\Asteroid.cs" Line="44" Column="4" />
-      <File FileName="FlappyBird\AudioManager.cs" Line="48" Column="22" />
+      <File FileName="FlappyBird\LevelOne.cs" Line="210" Column="25" />
+      <File FileName="FlappyBird\MenuScene.cs" Line="57" Column="73" />
+      <File FileName="d:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\Background.cs" Line="24" Column="10" />
+      <File FileName="d:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\GameoverScene.cs" Line="40" Column="26" />
+      <File FileName="d:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\OptionScene.cs" Line="80" Column="4" />
+      <File FileName="d:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\Asteroid.cs" Line="31" Column="43" />
+      <File FileName="C:\Program Files (x86)\MSBuild\Sce\Sce.Psm.Common.targets" Line="194" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="FlappyBird" expanded="True">
-            <Node name="SceneManager.cs" selected="True" />
+            <Node name="textures" expanded="True">
+              <Node name="Rocket.png" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
