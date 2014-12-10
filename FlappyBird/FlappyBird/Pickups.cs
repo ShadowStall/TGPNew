@@ -11,76 +11,124 @@ namespace FlappyBird
 {
 	public class Pickups
 	{
-		
-		private SpriteUV sprite;
-		
+		private SpriteUV lifeSprite;	
 		private TextureInfo textureInfo;
-		
 		private bool active;
 		public bool Active { get{return active;} set{active = value;} }
-		private Bounds2 pickupBounds ;
-		private Timer time;
-		private Random rand;
+		private Bounds2 lifePickupBounds ;
+		private Timer lifeTime;
+		private Random randLife;
 		private AudioManager audio;
+		
+		private SpriteUV rocketSprite;
+		private TextureInfo rocketTextureInfo;
+		private Bounds2 rocketPickupBounds;
+		private Timer rocketTime;
+		private Random randRocket;
+		
 		public Pickups (Scene scene)
 		{
-			time =  new Timer();
+			//Life Pickup
 			textureInfo  = new TextureInfo("/Application/textures/Pickups/LifePickup.png");
-			sprite	 		= new SpriteUV();
-			sprite 			= new SpriteUV(textureInfo);	
-			sprite.Quad.S 	= textureInfo.TextureSizef;
-			active = false;
-			sprite.Scale = new Vector2(1.0f);
-			pickupBounds = new Bounds2();
-			sprite.Position = new Vector2(-300.0f, -300.0f);// spawn the first ones off screen
-			rand = new Random();
-			audio = new AudioManager();
-			scene.AddChild(sprite);
-		}
-		public Bounds2 GetBounds()
-		{
-			sprite.GetContentWorldBounds(ref pickupBounds);
+			lifeSprite = new SpriteUV(textureInfo);	
+			lifeSprite.Quad.S = textureInfo.TextureSizef;
+			lifeSprite.Scale = new Vector2(1.0f);
+			lifePickupBounds = new Bounds2();
+			lifeSprite.Position = new Vector2(-300.0f, -300.0f);// spawn the first ones off screen
+			lifeTime =  new Timer();
 			
-			return this.pickupBounds;
+			// rocket pickup 
+			rocketTextureInfo = new TextureInfo("/Application/textures/Pickups/RocketPickup.png");
+			rocketSprite = new SpriteUV(rocketTextureInfo);
+			rocketSprite.Quad.S = rocketTextureInfo.TextureSizef;
+			rocketSprite.Scale = new Vector2(0.8f);
+			rocketPickupBounds = new Bounds2();
+			rocketSprite.Position = new Vector2(-200f, -200f);
+			rocketTime = new Timer();
+			
+			active = false;
+			randLife = new Random();
+			randRocket = new Random();
+			audio = new AudioManager();
+			scene.AddChild(rocketSprite);
+			scene.AddChild(lifeSprite);
 		}
-		public void CheckCollision(Bird bird, Scene scene)
+		public Bounds2 GetLifePickupBounds()
 		{
-			if(GetBounds().Overlaps(bird.GetBirdBounds()))
+			lifeSprite.GetContentWorldBounds(ref lifePickupBounds);
+			
+			return this.lifePickupBounds;
+		}
+		public Bounds2 GetRocketPickupBounds()
+		{
+			rocketSprite.GetContentWorldBounds(ref rocketPickupBounds);
+			
+			return this.rocketPickupBounds;
+		}
+		public void CheckCollision_lifePickup(Bird bird, Scene scene)
+		{
+			if(GetLifePickupBounds().Overlaps(bird.GetBirdBounds()))
 			{
-				sprite.Position = new Vector2(-300f, -300f);
+				lifeSprite.Position = new Vector2(-300f, -300f);
 				bird.AddToLifeCounter(10);
 				audio.PlayLifePickup();
 				//play life + sound
 			}
-		
+		}
+		public bool CheckCollision_rocketPickup(Bird bird, Scene scene)
+		{
+			if(GetRocketPickupBounds().Overlaps(bird.GetBirdBounds()))
+			{
+				rocketSprite.Position = new Vector2(-300f, -300f);
+				
+				// play sound
+				return true;
+			}
+			return false;
 		}
 		public void Dispose()
 		{
 			textureInfo.Dispose();
 		}
-		public void Update()
+		public void UpdateLifePickup()
 		{
-			if(sprite != null)
+			if(rocketSprite != null)
 			{
-				sprite.Position = new Vector2(sprite.Position.X - 1.5f, sprite.Position.Y);
+				rocketSprite.Position = new Vector2(lifeSprite.Position.X - 1.5f, lifeSprite.Position.Y);
+			}
+		}
+		public void UpdateRocketPickup()
+		{
+			if(lifeSprite != null)
+			{
+				lifeSprite.Position = new Vector2(lifeSprite.Position.X - 1.5f, lifeSprite.Position.Y);
 			}
 		}
 		public void SpawnLife()
 		{
-			if (time.Seconds()>= 5.0)
+			if (lifeTime.Seconds()>= 5.0)
 			{
-				sprite.Position = new Vector2((float)rand.Next(1, 930), (float)rand.Next(1, 500));
-				time.Reset();			//back to 0
-				time = new Timer();		//Starts the timer again 
+				lifeSprite.Position = new Vector2((float)randLife.Next(1, 930), (float)randLife.Next(1, 500));
+				lifeTime.Reset();			//back to 0
+				lifeTime = new Timer();		//Starts the timer again 
+			}
+		}
+		public void SpawnRockets()
+		{
+			if (rocketTime.Seconds() >= 7.5)
+			{
+				rocketSprite.Position = new Vector2((float)randRocket.Next(1, 930), (float)randRocket.Next(1, 500));
+				rocketTime.Reset();			//back to 0
+				rocketTime = new Timer();		//Starts the timer again 
 			}
 		}
 		public float getX()
 		{
-			return sprite.Position.X;
+			return lifeSprite.Position.X;
 		}
 		public float getY()
 		{
-			return sprite.Position.Y;
+			return lifeSprite.Position.Y;
 		}
 		
 		

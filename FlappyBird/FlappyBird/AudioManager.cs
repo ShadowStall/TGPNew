@@ -26,7 +26,22 @@ namespace FlappyBird
 		private SoundPlayer winampLifePickUP;
 		private Sound lifePickupSound;
 		
+		//rocket Pickup Sound
+		private SoundPlayer winampRocketPickUP;
+		private Sound rocketPickupSound;
+		
 		public AudioManager (){}
+		public void PlayRocketPickup()
+		{
+			if(winampRocketPickUP == null)
+			{
+				rocketPickupSound = new Sound("/Application/Audio/rocketPickupSound.wav");
+				winampRocketPickUP = rocketPickupSound.CreatePlayer();
+				winampRocketPickUP.Volume = GameManager.Instance.SoundFXVol;
+				winampRocketPickUP.PlaybackRate = 2.0f;
+			}
+			winampRocketPickUP.Play();
+		}
 		public void PlayLifePickup()
 		{
 			if(winampLifePickUP== null)
@@ -76,6 +91,14 @@ namespace FlappyBird
 			if(rocketFiredSound != null)
 			{
 				rocketFiredSound.Dispose();
+			}
+			if(rocketPickupSound != null)
+			{
+				rocketPickupSound.Dispose();
+			}
+			if(winampRocketPickUP != null)
+			{
+				winampRocketPickUP.Dispose();
 			}
 		}
 		public void StopLazerSound()

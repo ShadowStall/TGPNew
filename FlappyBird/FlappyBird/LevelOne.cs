@@ -134,9 +134,17 @@ namespace FlappyBird
 			base.Update(dt);
 			if(player.Alive == true)
 			{
-				pickup.Update();
 				pickup.SpawnLife();
-				pickup.CheckCollision(player, this);
+			//	pickup.UpdateLifePickup();
+				pickup.CheckCollision_lifePickup(player, this);
+				pickup.SpawnRockets();
+ 				if (pickup.CheckCollision_rocketPickup(player, this))
+				{
+					IncreaseRocketClip();
+					audio.PlayRocketPickup();
+				}
+			//	pickup.UpdateRocketPickup();
+				
 				UpdateLife(player.getlifeCounter());
 				PlayerControls();
 				player.Update(0.0f);
@@ -244,7 +252,16 @@ namespace FlappyBird
 		}
 		public void UpdateRocketAmount()
 		{
-			rocketAmount = rocketAmount - 1;
+			rocketAmount -= 1;
+			rocketCountLabel.Text = rocketAmount.ToString();
+		}
+		public void IncreaseRocketClip()
+		{
+			rocketAmount += 3;
+			if(rocketAmount > 10)  		//this makes sure that there is only ever 10 rockets in the clip
+			{
+				rocketAmount = 10;
+			}
 			rocketCountLabel.Text = rocketAmount.ToString();
 		}
 		public void UpdateScoreAmount()

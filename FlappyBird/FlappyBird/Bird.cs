@@ -29,8 +29,11 @@ namespace FlappyBird
 			audio = new AudioManager();
 			textureInfo  = new TextureInfo("/Application/textures/player2.png");
 			sprite = new SpriteUV();
+			
 			sprite = new SpriteUV(textureInfo);	
+			
 			sprite.Quad.S = textureInfo.TextureSizef;
+			
 			sprite.Position = new Vector2(50.0f,Director.Instance.GL.Context.GetViewport().Height*0.5f);
 			alive = true;
 			scene.AddChild(sprite);

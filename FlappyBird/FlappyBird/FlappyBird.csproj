@@ -104,5 +104,7 @@
     <Content Include="textures\Rocket.png" />
     <Content Include="textures\Pickups\LifePickup.png" />
     <Content Include="Audio\collectLifePowerup.wav" />
+    <Content Include="textures\Pickups\RocketPickup.png" />
+    <Content Include="Audio\rocketPickupSound.wav" />
   </ItemGroup>
 </Project>
