@@ -20,11 +20,10 @@ namespace FlappyBird
 		private bool increment = false;
 		public bool Active { get{return active;} set{active = value;} }
 		private Bounds2 bulletBounds ;
-		private ScoreHelper score;
+
 		
 		public Bullet (Scene scene)
 		{
-			score = new ScoreHelper();
 			textureInfo  = new TextureInfo("/Application/textures/bullet2.png");
 			sprite	 		= new SpriteUV();
 			sprite 			= new SpriteUV(textureInfo);	

@@ -13,8 +13,9 @@ namespace FlappyBird
 {
 	public class TimeManager
 	{
-		private static Timer time; 
+		private Timer time; 
 		private double interval;
+		
 		public TimeManager (double interval)
 		{
 			this.interval = interval;
@@ -29,13 +30,18 @@ namespace FlappyBird
 		}
 		public bool HasIntervalPassed()				//returns true if interval amount of seconds has passed 
 		{
-			if(time.Seconds() >= interval)
+			if(time != null)
 			{
-				ResetTimer();
-				StartTimer();
-				return true;
+					
+				if(time.Seconds() >= interval)
+				{
+					ResetTimer();
+					StartTimer();
+					return true;
+				}
+					return false;
 			}
-				return false;
+			return false;
 		}
 		public void Debugg()
 		{

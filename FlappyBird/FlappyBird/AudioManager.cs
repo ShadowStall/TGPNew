@@ -23,7 +23,21 @@ namespace FlappyBird
 		private SoundPlayer winampFireAsteroid;
 		private Sound rocketFiredSound;
 		
+		private SoundPlayer winampLifePickUP;
+		private Sound lifePickupSound;
+		
 		public AudioManager (){}
+		public void PlayLifePickup()
+		{
+			if(winampLifePickUP== null)
+			{
+				lifePickupSound = new Sound ("/Application/Audio/collectLifePowerup.wav");
+				winampLifePickUP = lifePickupSound.CreatePlayer();
+				winampLifePickUP.Volume = GameManager.Instance.SoundFXVol;
+				winampLifePickUP.PlaybackRate = 2.0f;
+			}
+			winampLifePickUP.Play();
+		}
 		public void PlayLazerSound()
 		{
 			if(winamp == null)

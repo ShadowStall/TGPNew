@@ -63,6 +63,13 @@ namespace FlappyBird
 				alive = false;
 			}
 		}
+		public void AddToLifeCounter(int howMuchtoAdd)
+		{
+			if (lifeCounter >= 10)
+			{
+				this.lifeCounter += howMuchtoAdd;
+			}
+		}
 		public void RestartCheckCollision()
 		{
 			this.check = true;

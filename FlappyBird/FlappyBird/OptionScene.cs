@@ -59,7 +59,7 @@ namespace FlappyBird
 			_texture = new Texture2D(screenSize.Width, screenSize.Height, false, PixelFormat.Rgba);
 			_ti = new TextureInfo(_texture);
 
-			textureBackground = new Texture2D("/Application/textures/backgroundV2.png", false);
+			textureBackground = new Texture2D("/Application/textures/OptionsBackground.png", false);
 			tiBackground = new TextureInfo(textureBackground);
 			
 			SpriteUV background = new SpriteUV(tiBackground);

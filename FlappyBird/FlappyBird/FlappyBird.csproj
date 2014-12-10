@@ -57,6 +57,7 @@
     <Compile Include="GameoverScene.cs" />
     <Compile Include="LevelOne.cs" />
     <Compile Include="ScoreHelper.cs" />
+    <Compile Include="Pickups.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -68,20 +69,16 @@
     <Folder Include="fonts\" />
     <Folder Include="textures\HUD\" />
     <Folder Include="Audio\" />
+    <Folder Include="textures\Pickups\" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Texture.fcg" />
     <ShaderProgram Include="shaders\Texture.vcg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="textures\bottompipe.png" />
-    <Content Include="textures\bird.png" />
-    <Content Include="textures\bullet.png" />
-    <Content Include="textures\rocket.png" />
     <Content Include="textures\HUD\BulletCounterSymbol.png" />
     <Content Include="textures\player2.png" />
     <Content Include="textures\bullet2.png" />
-    <Content Include="textures\asteroid2.png" />
     <Content Include="Audio\BGLoop.mp3" />
     <Content Include="Audio\Lazer1.wav" />
     <Content Include="textures\explosion.png" />
@@ -99,6 +96,13 @@
     <Content Include="textures\HUD\healthbarRed3.png" />
     <Content Include="Audio\ShipDying.wav" />
     <Content Include="Audio\rocketLaunch.wav" />
-    <Content Include="textures\Background.png" />
+    <Content Include="textures\BackgroundGameMenu.png" />
+    <Content Include="textures\BackgroundLevel1.png" />
+    <Content Include="textures\BackgroundGameOver.png" />
+    <Content Include="textures\OptionsBackground.png" />
+    <Content Include="textures\asteroid.png" />
+    <Content Include="textures\Rocket.png" />
+    <Content Include="textures\Pickups\LifePickup.png" />
+    <Content Include="Audio\collectLifePowerup.wav" />
   </ItemGroup>
 </Project>

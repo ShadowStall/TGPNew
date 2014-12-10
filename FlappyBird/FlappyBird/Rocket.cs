@@ -27,7 +27,7 @@ namespace FlappyBird
 			sprite 			= new SpriteUV(textureInfo);	
 			sprite.Quad.S 	= textureInfo.TextureSizef;
 			active = false;
-			sprite.Scale = new Vector2(0.5f);
+			sprite.Scale = new Vector2(0.1f);
 			rocketBounds = new Bounds2();
 			scene.AddChild(sprite);
 		}
@@ -88,7 +88,6 @@ namespace FlappyBird
 		public void detonateAsteroid()
  		{
 			sprite.Position = new Vector2(- 100, -100);
-
  		}
 		public void setAlive(bool peanut)
 		{

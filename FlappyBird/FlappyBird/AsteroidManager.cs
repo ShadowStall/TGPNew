@@ -65,10 +65,7 @@ namespace FlappyBird
 					{
 						SaveRandomYpos();
 						SaveRandomXpos();
-						
-							asteroidArray[i].SpawnAsteroid(asteroidXPos[i],asteroidYPos[i]);
-						
-						
+						asteroidArray[i].SpawnAsteroid(asteroidXPos[i],asteroidYPos[i]);
 					}
 				
 			}

@@ -41,6 +41,7 @@ namespace FlappyBird
 		private Sce.PlayStation.HighLevel.UI.Label ScoreCountLabel;
 		private ScoreHelper score;
 		private int Score = 0;
+		private Pickups pickup;
 		
 		public LevelOne()
 		{
@@ -88,7 +89,7 @@ namespace FlappyBird
 			spriteLifeRed = new SpriteUV(textureInfoRedLife);	
 			spriteLifeRed.Quad.S = textureInfoBackLife.TextureSizef;
 			spriteLifeRed.Position = new Vector2(250f, 520f);
-		
+			
 			
 			background = new Background(this);
 			bulletList = new List<Bullet>();
@@ -97,6 +98,8 @@ namespace FlappyBird
 			
 			_hudSymbolBullets = new Hud(this);
 			asteroidManager = new AsteroidManager(this);
+			pickup = new Pickups(this);
+			
 			
 			this.Camera.SetViewFromViewport();
 			Scheduler.Instance.ScheduleUpdateForTarget(this,0,false);
@@ -108,6 +111,7 @@ namespace FlappyBird
 		{	
 			switch(life)
 				{
+					case 100: spriteLifeRed.Scale = new Vector2(1.0f,1.0f); break;
 					case 90: spriteLifeRed.Scale = new Vector2(0.9f,1.0f); break;
 					case 80: spriteLifeRed.Scale = new Vector2(0.8f, 1.0f); break;
 					case 70: spriteLifeRed.Scale = new Vector2(0.7f,1.0f); break;
@@ -130,6 +134,9 @@ namespace FlappyBird
 			base.Update(dt);
 			if(player.Alive == true)
 			{
+				pickup.Update();
+				pickup.SpawnLife();
+				pickup.CheckCollision(player, this);
 				UpdateLife(player.getlifeCounter());
 				PlayerControls();
 				player.Update(0.0f);

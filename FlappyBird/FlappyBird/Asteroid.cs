@@ -13,7 +13,7 @@ namespace FlappyBird
 	{
 			
 		private SpriteUV sprite;
-		private TextureInfo textureInfo = new TextureInfo("/Application/textures/asteroid2.png");
+		private TextureInfo textureInfo = new TextureInfo("/Application/textures/asteroid.png");
 	    private TextureInfo explodeInfo = new TextureInfo("/Application/textures/explosion.png");
 		private bool disposeOf = false;
 		private Random rand; 
@@ -58,6 +58,7 @@ namespace FlappyBird
 		public void Update()
 		{
 			sprite.Position = new Vector2(sprite.Position.X - movementSpeed, sprite.Position.Y);
+			//wsprite.Rotate(0.2f);
 		}
 		public float getX()
 		{
