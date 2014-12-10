@@ -59,14 +59,16 @@ namespace FlappyBird
 
 		public void HandleSpawn()
 		{
-			if(timeManaged.HasIntervalPassed())
+			if(timeManaged.HasIntervalPassed() )
 			{
 				for(int i = 0; i< numberOfAsteroids; i++)
 					{
 						SaveRandomYpos();
 						SaveRandomXpos();
-						asteroidArray[i].SpawnAsteroid(asteroidXPos[i],asteroidYPos[i]);
-						asteroidArray[i].setAlive(true);
+						
+							asteroidArray[i].SpawnAsteroid(asteroidXPos[i],asteroidYPos[i]);
+						
+						
 					}
 				
 			}

@@ -31,7 +31,7 @@ namespace FlappyBird
 			sprite 			= new SpriteUV(textureInfo);	
 			sprite.Quad.S 	= textureInfo.TextureSizef;
 			sprite.Scale = new Vector2(0.2f);	
-			movementSpeed = 5.5f;
+			movementSpeed = 8.5f;
 			scene.AddChild(sprite);
 			lowY = 10;
 			highY = 500;
@@ -78,6 +78,7 @@ namespace FlappyBird
 		public void SpawnAsteroid(int x, int y)
 		{	
 			sprite.Position = new Vector2(x+950, y);
+			setAlive(true);
 		}
 		public void setOnScreen(bool ok)
 		{
@@ -102,6 +103,7 @@ namespace FlappyBird
 		{
 			audio.PlayAsteroidHitSound();
 			sprite.Position = new Vector2(- 100, -100);
+			setAlive(false);
 		}
 	}
 }

@@ -19,6 +19,7 @@ namespace FlappyBird
 		private Bounds2 birdBounds;
 		public bool Alive { get{return alive;} set{alive = value;} }
 		//Life 
+		private float speed = 5f;
 		private int lifeCounter = 100;
 		private bool check = true;
 		private TimeManager time = null; 
@@ -85,19 +86,19 @@ namespace FlappyBird
 		}
 		public void goUp()
 		{
-			sprite.Position =  new Vector2(sprite.Position.X, sprite.Position.Y +3f);
+			sprite.Position =  new Vector2(sprite.Position.X, sprite.Position.Y +speed);
 		}
 		public void goDown()
 		{
-			sprite.Position =  new Vector2(sprite.Position.X, sprite.Position.Y- 3f);
+			sprite.Position =  new Vector2(sprite.Position.X, sprite.Position.Y- speed);
 		}
 		public void goRight()
 		{
-			sprite.Position =  new Vector2(sprite.Position.X+ 3f, sprite.Position.Y);
+			sprite.Position =  new Vector2(sprite.Position.X+ speed, sprite.Position.Y);
 		}
 		public void goLeft()
 		{
-			sprite.Position =  new Vector2(sprite.Position.X- 3f, sprite.Position.Y);
+			sprite.Position =  new Vector2(sprite.Position.X- speed, sprite.Position.Y);
 		}
 		public float getX()
 		{

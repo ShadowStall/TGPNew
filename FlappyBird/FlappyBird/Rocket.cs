@@ -49,7 +49,7 @@ namespace FlappyBird
 		{
 			active = true;
 			sprite.Position = shipPosition;
-			
+			// Audio for rocket launching
 		}
 		public void Update()
 		{

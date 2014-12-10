@@ -49,6 +49,8 @@ namespace FlappyBird
 					case SceneTransitionType.DirectionalFade:
 						TransitionDirectionalFade directionalFade = new TransitionDirectionalFade(nextScene);
 						directionalFade.Duration = duration;
+						directionalFade.Width =  0.75f;
+						directionalFade.Direction = new Sce.PlayStation.Core.Vector2(10f,10f);
 						Director.Instance.ReplaceScene(directionalFade);
 						break;
 				

@@ -145,8 +145,7 @@ namespace FlappyBird
 			if(player.Alive == false)
 			{
 				audio.PlayShipDyingSound();
-				//play end game if died play something if finished levrel play something else
-				SceneManager.Instance.SendSceneToFront(new GameoverScene(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
+				SceneManager.Instance.SendSceneToFront(new GameoverScene(), SceneManager.SceneTransitionType.DirectionalFade, 1000.0f);
 			    audio.Dispose();
 			}
 		
@@ -228,6 +227,7 @@ namespace FlappyBird
 				rocket.Fire(new Vector2(bird.getX(), bird.getY()));
 				CrossDown = true;
 				UpdateRocketAmount();
+				audio.PlayRocketLaunchSound();
 			}
 			if (Input2.GamePad.GetData(0).Cross.Release)
 			{

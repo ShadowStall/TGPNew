@@ -20,6 +20,9 @@ namespace FlappyBird
 		private SoundPlayer winampHitAsteroid;// of soundPlayer or MediaPLayer 
 		private Sound asteroidHitSound;// of the actual sound
 		
+		private SoundPlayer winampFireAsteroid;
+		private Sound rocketFiredSound;
+		
 		public AudioManager (){}
 		public void PlayLazerSound()
 		{
@@ -51,6 +54,14 @@ namespace FlappyBird
 			if(bgmLvl1 != null)
 			{
 				bgmLvl1.Dispose();
+			}
+			if(winampFireAsteroid != null)
+			{
+				winampFireAsteroid.Dispose();
+			}
+			if(rocketFiredSound != null)
+			{
+				rocketFiredSound.Dispose();
 			}
 		}
 		public void StopLazerSound()
@@ -84,7 +95,18 @@ namespace FlappyBird
 			bgmPlayerLvl1.Play();
 		}
 		
-
+		public void PlayRocketLaunchSound()
+		{
+			if( winampFireAsteroid == null)
+			{
+				//set up fx
+				rocketFiredSound = new Sound("/Application/Audio/rocketLaunch.wav");//waw only
+				winampFireAsteroid = rocketFiredSound.CreatePlayer();
+				winampFireAsteroid.Volume = GameManager.Instance.SoundFXVol;
+				winampFireAsteroid.PlaybackRate = 2.0f;
+			}
+				winampFireAsteroid.Play();
+		}
 		
 		public void PlayShipHitSound()
 		{
