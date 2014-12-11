@@ -76,10 +76,7 @@ namespace FlappyBird
 			Scheduler.Instance.ScheduleUpdateForTarget(this,0,false);
 			this.RegisterDisposeOnExitRecursive();
 						// the idea is that if it's already playing do not try to play it again 
-			
-				audio.PlayMainMenuSound();
-			
-			
+			audio.PlayMainMenuSound();
 		}
 		public override void OnEnter()
 		{
@@ -109,9 +106,9 @@ namespace FlappyBird
 					
 					if(ButtonHit(xPos, yPos, optionRect)) 		//Options Menu
 					{
+						audio.Dispose();
 						Touch.GetData(0).Clear();
 						SceneManager.Instance.SendSceneToFront(new OptionScene(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
-						audio.Dispose();
 					}
 					
 					lastTouchStatus = touchStatus;

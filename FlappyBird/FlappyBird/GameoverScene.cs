@@ -30,14 +30,13 @@ namespace FlappyBird
 		
 		public GameoverScene()
 		{
-			audio = new AudioManager();
-			audio.PlayGameOverMusic();
+
 			var screenSize = Director.Instance.GL.Context.GetViewport();
 			screenWidth = screenSize.Width;
 			screenHeight = screenSize.Height;
 			
 			Sce.PlayStation.HighLevel.UI.Scene scene = new Sce.PlayStation.HighLevel.UI.Scene();
-			
+
 			gameoverLabel = new Sce.PlayStation.HighLevel.UI.Label();
 			gameoverLabel.SetPosition(screenSize.Width/2 - 50, screenSize.Height/4);
 			gameoverLabel.Text = "";
@@ -78,15 +77,22 @@ namespace FlappyBird
 			this.Camera.SetViewFromViewport();
 			Scheduler.Instance.ScheduleUpdateForTarget(this,0,false);
 			this.RegisterDisposeOnExitRecursive();
+			if(audio == null)
+			{
+				audio = new AudioManager();
+			}
+			
 		}
 		
 		public override void OnEnter()
 		{
 			base.OnEnter();
+			
 		}
 		
 		public override void Update(float dt)
 		{
+			//audio.PlayGameOverMusic();
 			base.Update(dt);
 			var gamePadData = GamePad.GetData(0);
 			List<TouchData> touches = Touch.GetData(0);
