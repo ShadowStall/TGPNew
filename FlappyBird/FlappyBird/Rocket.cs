@@ -62,7 +62,6 @@ namespace FlappyBird
 		{
 			for(int i = 0; i<asteroidArray.Length; i++)
 			{
-				
 				if(GetBounds().Overlaps(asteroidArray[i].GetBounds()))
 				{
 					asteroidArray[i].detonateAsteroid();
@@ -73,8 +72,7 @@ namespace FlappyBird
 				else
 				{
 					increment = false;
-				}
-				
+				}	
 			}
 		}
 		public float getX()

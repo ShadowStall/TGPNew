@@ -1,22 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\Pickups.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\MenuScene.cs">
     <Files>
-      <File FileName="FlappyBird\LevelOne.cs" Line="142" Column="6" />
-      <File FileName="FlappyBird\Bird.cs" Line="51" Column="29" />
-      <File FileName="FlappyBird\Pickups.cs" Line="102" Column="5" />
-      <File FileName="FlappyBird\AudioManager.cs" Line="34" Column="79" />
-      <File FileName="FlappyBird\Background.cs" Line="59" Column="64" />
+      <File FileName="FlappyBird\AudioManager.cs" Line="51" Column="4" />
+      <File FileName="FlappyBird\MenuScene.cs" Line="96" Column="38" />
+      <File FileName="FlappyBird\LevelOne.cs" Line="164" Column="24" />
+      <File FileName="d:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\AppMain.cs" Line="23" Column="48" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="FlappyBird" expanded="True">
-            <Node name="textures" expanded="True">
-              <Node name="Pickups" expanded="True">
-                <Node name="RocketPickup.png" selected="True" />
-              </Node>
-            </Node>
+            <Node name="Audio" expanded="True" />
+            <Node name="MenuScene.cs" selected="True" />
           </Node>
         </State>
       </Pad>

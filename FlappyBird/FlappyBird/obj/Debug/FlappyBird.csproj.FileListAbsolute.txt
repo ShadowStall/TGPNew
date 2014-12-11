@@ -784,3 +784,9 @@ D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\obj\Debug
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\obj\Debug\app.pdb
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Audio\rocketPickupSound.wav
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Audio\rocketPickupSound.wav
+D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Audio\MenuScreenBackgroundMusic.mp3
+D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Audio\MenuScreenBackgroundMusic.mp3
+D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Audio\LevelOneBackGround.mp3
+D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Audio\GameOver.mp3
+D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Audio\LevelOneBackGround.mp3
+D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Audio\GameOver.mp3

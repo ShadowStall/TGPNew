@@ -19,8 +19,8 @@ namespace FlappyBird
 		private Bounds2 birdBounds;
 		public bool Alive { get{return alive;} set{alive = value;} }
 		//Life 
-		private float speed = 5f;
-		private int lifeCounter = 100;
+		private float speed = 2.5f;
+		private int lifeCounter = 10;
 		private bool check = true;
 		private TimeManager time = null; 
 		private AudioManager audio;

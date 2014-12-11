@@ -26,8 +26,14 @@ namespace FlappyBird
 		private Rectangle startRect, optionRect;
 		private TouchStatus touchStatus, lastTouchStatus;
 		
+		private AudioManager audio;
+		
 		public MenuScene()
 		{
+			if (audio == null)
+			{
+				audio = new AudioManager();
+			}
 			var screenSize = Director.Instance.GL.Context.GetViewport();
 			screenWidth = screenSize.Width;
 			screenHeight = screenSize.Height;
@@ -69,8 +75,12 @@ namespace FlappyBird
 			this.Camera.SetViewFromViewport();
 			Scheduler.Instance.ScheduleUpdateForTarget(this,0,false);
 			this.RegisterDisposeOnExitRecursive();
+						// the idea is that if it's already playing do not try to play it again 
+			
+				audio.PlayMainMenuSound();
+			
+			
 		}
-		
 		public override void OnEnter()
 		{
 			base.OnEnter();
@@ -78,6 +88,7 @@ namespace FlappyBird
 		
 		public override void Update(float dt)
 		{
+			
 			base.Update(dt);
 			var gamePadData = GamePad.GetData(0);
 			List<TouchData> touches = Touch.GetData(0);
@@ -89,17 +100,18 @@ namespace FlappyBird
 				
 				if(data.Status  == TouchStatus.Down)
 				{
-					if(ButtonHit(xPos, yPos, startRect))
+					if(ButtonHit(xPos, yPos, startRect))		//Level One
 					{
+						audio.Dispose();
 						Touch.GetData(0).Clear();
-						//If screen is touched then switch to level one
 						SceneManager.Instance.SendSceneToFront(new LevelOne(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
 					}
 					
-					if(ButtonHit(xPos, yPos, optionRect))
+					if(ButtonHit(xPos, yPos, optionRect)) 		//Options Menu
 					{
 						Touch.GetData(0).Clear();
 						SceneManager.Instance.SendSceneToFront(new OptionScene(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
+						audio.Dispose();
 					}
 					
 					lastTouchStatus = touchStatus;

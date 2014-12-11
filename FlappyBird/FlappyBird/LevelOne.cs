@@ -135,7 +135,6 @@ namespace FlappyBird
 			if(player.Alive == true)
 			{
 				pickup.SpawnLife();
-			//	pickup.UpdateLifePickup();
 				pickup.CheckCollision_lifePickup(player, this);
 				pickup.SpawnRockets();
  				if (pickup.CheckCollision_rocketPickup(player, this))
@@ -143,25 +142,27 @@ namespace FlappyBird
 					IncreaseRocketClip();
 					audio.PlayRocketPickup();
 				}
-			//	pickup.UpdateRocketPickup();
-				
 				UpdateLife(player.getlifeCounter());
 				PlayerControls();
 				player.Update(0.0f);
 				FireBullets(player);
 				FireRocket(player);
-				player.CheckCollision(AsteroidManager.getAsteroidArray());
+			
 				asteroidManager.HandleSpawn();
+				player.CheckCollision(AsteroidManager.getAsteroidArray());
 				asteroidManager.Update();
+				
+				
 				UpdateRockets();
 				UpdateBullets();
 				background.Update(0.0f);
 			}
 			if(player.Alive == false)
 			{
+				audio.Dispose();
 				audio.PlayShipDyingSound();
 				SceneManager.Instance.SendSceneToFront(new GameoverScene(), SceneManager.SceneTransitionType.DirectionalFade, 1000.0f);
-			    audio.Dispose();
+			    
 			}
 		
 		}

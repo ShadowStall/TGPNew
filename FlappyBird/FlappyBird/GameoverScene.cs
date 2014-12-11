@@ -26,9 +26,12 @@ namespace FlappyBird
 		private Rectangle retryRect, menuRect;
 		private TouchStatus touchStatus, lastTouchStatus;
 		private Sce.PlayStation.HighLevel.UI.Label gameoverLabel;
+		private AudioManager audio;
 		
 		public GameoverScene()
 		{
+			audio = new AudioManager();
+			audio.PlayGameOverMusic();
 			var screenSize = Director.Instance.GL.Context.GetViewport();
 			screenWidth = screenSize.Width;
 			screenHeight = screenSize.Height;
@@ -97,12 +100,15 @@ namespace FlappyBird
 				{
 					if(ButtonHit(xPos, yPos, retryRect))
 					{
+						audio.Dispose();
 						Touch.GetData(0).Clear();
 						SceneManager.Instance.SendSceneToFront(new LevelOne(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
+						
 					}
 					
 					if(ButtonHit(xPos, yPos, menuRect))
 					{
+						audio.Dispose();
 						Touch.GetData(0).Clear();
 						SceneManager.Instance.SendSceneToFront(new MenuScene(), SceneManager.SceneTransitionType.SolidFade, 0.0f);
 					}

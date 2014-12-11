@@ -26,6 +26,8 @@ namespace FlappyBird
 		private Timer rocketTime;
 		private Random randRocket;
 		
+		private Timer timeToGoLife;
+		
 		public Pickups (Scene scene)
 		{
 			//Life Pickup
@@ -106,16 +108,21 @@ namespace FlappyBird
 		}
 		public void SpawnLife()
 		{
-			if (lifeTime.Seconds()>= 5.0)
+			if (lifeTime.Seconds()>= 30.0)
 			{
 				lifeSprite.Position = new Vector2((float)randLife.Next(1, 930), (float)randLife.Next(1, 500));
+				if(timeToGoLife != null)
+				{
+					timeToGoLife.Reset();
+				}
 				lifeTime.Reset();			//back to 0
-				lifeTime = new Timer();		//Starts the timer again 
+				lifeTime = new Timer();		//Starts the timer again
+				
 			}
 		}
 		public void SpawnRockets()
 		{
-			if (rocketTime.Seconds() >= 7.5)
+			if (rocketTime.Seconds() >= 20.5)
 			{
 				rocketSprite.Position = new Vector2((float)randRocket.Next(1, 930), (float)randRocket.Next(1, 500));
 				rocketTime.Reset();			//back to 0

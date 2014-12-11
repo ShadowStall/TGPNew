@@ -30,7 +30,41 @@ namespace FlappyBird
 		private SoundPlayer winampRocketPickUP;
 		private Sound rocketPickupSound;
 		
+		//main menu sound 
+		private BgmPlayer bgmPlayMainMenu;
+		private Bgm bgmMainMenu;
+		
+		//Game over Sounds
+		private BgmPlayer bgmPlayGameOverMusic;
+		private Bgm bgmGameOver;
+		
+		
 		public AudioManager (){}
+		public void PlayMainMenuSound()
+		{
+			if(bgmMainMenu == null)
+			{
+				bgmMainMenu = new Bgm("/Application/Audio/MenuScreenBackgroundMusic.mp3");
+			}
+			if(bgmPlayMainMenu == null)
+			{
+				bgmPlayMainMenu = bgmMainMenu.CreatePlayer();
+				bgmPlayMainMenu.Volume = GameManager.Instance.MusicVol;
+				bgmPlayMainMenu.Loop = true;
+			}
+				bgmPlayMainMenu.Play();
+		}
+		public bool CanPlay()
+		{
+			if (bgmPlayMainMenu != null)
+			{
+				if( bgmPlayMainMenu.Status != BgmStatus.Playing)
+				{
+					return true;
+				}
+			}
+			return false;
+		}
 		public void PlayRocketPickup()
 		{
 			if(winampRocketPickUP == null)
@@ -53,6 +87,20 @@ namespace FlappyBird
 			}
 			winampLifePickUP.Play();
 		}
+		public void PlayGameOverMusic()
+		{
+			if (bgmGameOver == null)
+			{
+				bgmGameOver = new Bgm("/Application/Audio/GameOver.mp3"); //mp3 only
+			}
+			if(bgmPlayGameOverMusic == null)
+			{
+				bgmPlayGameOverMusic = bgmGameOver.CreatePlayer();
+				bgmPlayGameOverMusic.Volume = GameManager.Instance.MusicVol;
+				bgmPlayGameOverMusic.Loop = true;
+			}
+			bgmPlayGameOverMusic.Play();
+		}
 		public void PlayLazerSound()
 		{
 			if(winamp == null)
@@ -68,6 +116,22 @@ namespace FlappyBird
 		}
 		public void Dispose()
 		{
+			if(bgmGameOver != null)
+			{
+				bgmGameOver.Dispose();
+			}
+			if(bgmPlayGameOverMusic!= null)
+			{
+				bgmPlayGameOverMusic.Dispose();
+			}
+			if(bgmPlayMainMenu != null)
+			{
+				bgmPlayMainMenu.Dispose();
+			}
+			if(bgmMainMenu != null)
+			{
+				bgmMainMenu.Dispose();
+			}
 			if (bgmPlayerLvl1 != null)
 			{
 				bgmPlayerLvl1.Dispose();
@@ -120,7 +184,7 @@ namespace FlappyBird
 			if (bgmLvl1 == null)
 			{
 				//setup bgm 
-				bgmLvl1 = new Bgm("/Application/Audio/BGLoop.mp3"); //mp3 only
+				bgmLvl1 = new Bgm("/Application/Audio/LevelOneBackGround.mp3"); //mp3 only
 		
 			}
 			if(bgmPlayerLvl1 == null)

@@ -58,6 +58,7 @@
     <Compile Include="LevelOne.cs" />
     <Compile Include="ScoreHelper.cs" />
     <Compile Include="Pickups.cs" />
+    <Compile Include="AudioManagerSingleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -106,5 +107,8 @@
     <Content Include="Audio\collectLifePowerup.wav" />
     <Content Include="textures\Pickups\RocketPickup.png" />
     <Content Include="Audio\rocketPickupSound.wav" />
+    <Content Include="Audio\MenuScreenBackgroundMusic.mp3" />
+    <Content Include="Audio\LevelOneBackGround.mp3" />
+    <Content Include="Audio\GameOver.mp3" />
   </ItemGroup>
 </Project>
