@@ -1,9 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\LevelOne.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\GameoverScene.cs">
     <Files>
-      <File FileName="FlappyBird\GameoverScene.cs" Line="33" Column="1" />
-      <File FileName="FlappyBird\LevelOne.cs" Line="163" Column="1" />
+      <File FileName="FlappyBird\GameoverScene.cs" Line="46" Column="48" />
+      <File FileName="FlappyBird\LevelOne.cs" Line="162" Column="32" />
+      <File FileName="FlappyBird\SceneManager.cs" Line="65" Column="7" />
+      <File FileName="c:\Users\shadow\Documents\GitHub\TGPNew\FlappyBird\FlappyBird\AudioManager.cs" Line="104" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
