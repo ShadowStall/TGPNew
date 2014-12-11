@@ -110,7 +110,7 @@ namespace FlappyBird
 		public void UpdateLife(int life)
 		{	
 			switch(life)
-				{
+			{
 					case 100: spriteLifeRed.Scale = new Vector2(1.0f,1.0f); break;
 					case 90: spriteLifeRed.Scale = new Vector2(0.9f,1.0f); break;
 					case 80: spriteLifeRed.Scale = new Vector2(0.8f, 1.0f); break;
@@ -159,8 +159,8 @@ namespace FlappyBird
 			}
 			if(player.Alive == false)
 			{
-				audio.Dispose();
 				audio.PlayShipDyingSound();
+				audio.Dispose();
 				SceneManager.Instance.SendSceneToFront(new GameoverScene(), SceneManager.SceneTransitionType.DirectionalFade, 1000.0f);
 			    
 			}

@@ -27,7 +27,7 @@ namespace FlappyBird
 		public Asteroid (Scene scene)
 		{
 			audio = new AudioManager();
-			sprite	 		= new SpriteUV();
+			//sprite	 		= new SpriteUV();
 			sprite 			= new SpriteUV(textureInfo);	
 			sprite.Quad.S 	= textureInfo.TextureSizef;
 			sprite.Scale = new Vector2(0.2f);	
