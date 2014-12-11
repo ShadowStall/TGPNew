@@ -30,13 +30,26 @@ namespace FlappyBird
 		
 		public GameoverScene()
 		{
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 			var screenSize = Director.Instance.GL.Context.GetViewport();
 			screenWidth = screenSize.Width;
 			screenHeight = screenSize.Height;
 			
 			Sce.PlayStation.HighLevel.UI.Scene scene = new Sce.PlayStation.HighLevel.UI.Scene();
+<<<<<<< HEAD
 
+=======
+			
+			if (audio == null)
+			{
+				audio = new AudioManager();
+			}
+			audio.PlayGameOverMusic();
+			
+>>>>>>> origin/master
 			gameoverLabel = new Sce.PlayStation.HighLevel.UI.Label();
 			gameoverLabel.SetPosition(screenSize.Width/2 - 50, screenSize.Height/4);
 			gameoverLabel.Text = "";

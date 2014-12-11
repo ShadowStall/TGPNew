@@ -791,6 +791,7 @@ D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Audio\LevelOneBackGround.mp3
 D:\Assignments\Technical games Production\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Audio\GameOver.mp3
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\shadow\Documents\GitHub\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.info
 C:\Users\shadow\Documents\GitHub\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\shaders\Texture.cgx
 C:\Users\shadow\Documents\GitHub\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.exe
@@ -891,6 +892,8 @@ C:\Users\shadow\Documents\GitHub\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBi
 C:\Users\shadow\Documents\GitHub\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\newImprovedAsteroid.png
 C:\Users\shadow\Documents\GitHub\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\newImprovedAsteroid.png
 =======
+=======
+>>>>>>> origin/master
 C:\Users\Owner\Desktop\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.info
 C:\Users\Owner\Desktop\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\shaders\Texture.cgx
 C:\Users\Owner\Desktop\TGPNew\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.exe
@@ -986,4 +989,7 @@ C:\Users\Owner\Desktop\TGPNew\FlappyBird\FlappyBird\obj\Debug\shaders\shaders\Te
 C:\Users\Owner\Desktop\TGPNew\FlappyBird\FlappyBird\obj\Debug\convertedpdb\app.exe.mdb
 C:\Users\Owner\Desktop\TGPNew\FlappyBird\FlappyBird\obj\Debug\app.exe
 C:\Users\Owner\Desktop\TGPNew\FlappyBird\FlappyBird\obj\Debug\app.pdb
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
