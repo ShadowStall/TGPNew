@@ -9,7 +9,7 @@
       <File FileName="FlappyBird\Pickups.cs" Line="122" Column="4" />
       <File FileName="FlappyBird\GameoverScene.cs" Line="111" Column="23" />
       <File FileName="FlappyBird\Bird.cs" Line="23" Column="31" />
-      <File FileName="FlappyBird\LevelOne.cs" Line="146" Column="22" />
+      <File FileName="FlappyBird\LevelOne.cs" Line="128" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
