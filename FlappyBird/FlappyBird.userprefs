@@ -1,37 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\LevelOne.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets">
     <Files>
-      <File FileName="FlappyBird\MenuScene.cs" Line="117" Column="36" />
-      <File FileName="FlappyBird\AudioManager.cs" Line="100" Column="38" />
-      <File FileName="FlappyBird\AudioManagerSingleton.cs" Line="21" Column="51" />
-      <File FileName="FlappyBird\OptionScene.cs" Line="28" Column="21" />
-      <File FileName="FlappyBird\Pickups.cs" Line="122" Column="4" />
-      <File FileName="FlappyBird\GameoverScene.cs" Line="111" Column="23" />
-      <File FileName="FlappyBird\Bird.cs" Line="23" Column="31" />
-      <File FileName="FlappyBird\LevelOne.cs" Line="128" Column="4" />
+      <File FileName="FlappyBird\AudioManager.cs" Line="1" Column="1" />
+      <File FileName="FlappyBird\AppMain.cs" Line="19" Column="32" />
+      <File FileName="FlappyBird\app.xml" Line="11" Column="1" />
+      <File FileName="FlappyBird\GameoverScene.cs" Line="45" Column="4" />
+      <File FileName="C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets" Line="2291" Column="20" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="FlappyBird" expanded="True">
-            <Node name="Audio" expanded="True" />
-            <Node name="LevelOne.cs" selected="True" />
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="ClassPad">
-        <State selected="True" />
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
-=======
-  <MonoDevelop.Ide.Workbench />
->>>>>>> origin/master
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
