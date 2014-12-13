@@ -20,7 +20,7 @@ namespace FlappyBird
 		private SoundPlayer winampHitAsteroid;// of soundPlayer or MediaPLayer 
 		private Sound asteroidHitSound;// of the actual sound
 		
-		private SoundPlayer winampFireAsteroid;
+		private SoundPlayer winampFireRocket;
 		private Sound rocketFiredSound;
 		
 		private SoundPlayer winampLifePickUP;
@@ -40,80 +40,7 @@ namespace FlappyBird
 		
 		
 		public AudioManager (){}
-		public void PlayMainMenuSound()
-		{
-			if(bgmMainMenu == null)
-			{
-				bgmMainMenu = new Bgm("/Application/Audio/MenuScreenBackgroundMusic.mp3");
-			}
-			if(bgmPlayMainMenu == null)
-			{
-				bgmPlayMainMenu = bgmMainMenu.CreatePlayer();
-				bgmPlayMainMenu.Volume = GameManager.Instance.MusicVol;
-				bgmPlayMainMenu.Loop = true;
-			}
-				bgmPlayMainMenu.Play();
-		}
-		public bool CanPlay()
-		{
-			if (bgmPlayMainMenu != null)
-			{
-				if( bgmPlayMainMenu.Status != BgmStatus.Playing)
-				{
-					return true;
-				}
-			}
-			return false;
-		}
-		public void PlayRocketPickup()
-		{
-			if(winampRocketPickUP == null)
-			{
-				rocketPickupSound = new Sound("/Application/Audio/rocketPickupSound.wav");
-				winampRocketPickUP = rocketPickupSound.CreatePlayer();
-				winampRocketPickUP.Volume = GameManager.Instance.SoundFXVol;
-				winampRocketPickUP.PlaybackRate = 2.0f;
-			}
-			winampRocketPickUP.Play();
-		}
-		public void PlayLifePickup()
-		{
-			if(winampLifePickUP== null)
-			{
-				lifePickupSound = new Sound ("/Application/Audio/collectLifePowerup.wav");
-				winampLifePickUP = lifePickupSound.CreatePlayer();
-				winampLifePickUP.Volume = GameManager.Instance.SoundFXVol;
-				winampLifePickUP.PlaybackRate = 2.0f;
-			}
-			winampLifePickUP.Play();
-		}
-		public void PlayGameOverMusic()
-		{
-			if (bgmGameOver == null)
-			{
-				bgmGameOver = new Bgm("/Application/Audio/GameOver.mp3"); //mp3 only
-			}
-			if(bgmPlayGameOverMusic == null)
-			{
-				bgmPlayGameOverMusic = bgmGameOver.CreatePlayer();
-				bgmPlayGameOverMusic.Volume = GameManager.Instance.MusicVol;
-				bgmPlayGameOverMusic.Loop = true;
-			}
-			bgmPlayGameOverMusic.Play();
-		}
-		public void PlayLazerSound()
-		{
-			if(winamp == null)
-			{
-				//set up fx
-				LazerSound = new Sound("/Application/Audio/Lazer1.wav");//waw only
-				winamp = LazerSound.CreatePlayer();
-				winamp.Volume = GameManager.Instance.SoundFXVol;
-				winamp.PlaybackRate = 2.0f;
-			}
-			winamp.Play();
 		
-		}
 		public void Dispose()
 		{
 			if(bgmGameOver != null)
@@ -148,9 +75,9 @@ namespace FlappyBird
 			{
 				bgmLvl1.Dispose();
 			}
-			if(winampFireAsteroid != null)
+			if(winampFireRocket != null)
 			{
-				winampFireAsteroid.Dispose();
+				winampFireRocket.Dispose();
 			}
 			if(rocketFiredSound != null)
 			{
@@ -165,6 +92,78 @@ namespace FlappyBird
 				winampRocketPickUP.Dispose();
 			}
 		}
+		
+		public void PlayMainMenuSound()
+		{
+			if(bgmMainMenu == null)
+			{
+				bgmMainMenu = new Bgm("/Application/Audio/MenuScreenBackgroundMusic.mp3");//
+			}
+			if(bgmPlayMainMenu == null)
+			{
+				bgmPlayMainMenu = bgmMainMenu.CreatePlayer();
+				bgmPlayMainMenu.Volume = GameManager.Instance.MusicVol;
+				bgmPlayMainMenu.Loop = true;
+			}
+				bgmPlayMainMenu.Play();
+		}
+
+		public void PlayRocketPickup()
+		{
+			if(winampRocketPickUP == null)
+			{
+				rocketPickupSound = new Sound("/Application/Audio/rocketPickupSound.wav");
+				winampRocketPickUP = rocketPickupSound.CreatePlayer();
+				winampRocketPickUP.Volume = GameManager.Instance.SoundFXVol;
+				winampRocketPickUP.PlaybackRate = 2.0f;
+			}
+			winampRocketPickUP.Play();
+		}
+		
+		public void PlayLifePickup()
+		{
+			if(winampLifePickUP== null)
+			{
+				lifePickupSound = new Sound ("/Application/Audio/collectLifePowerup.wav");
+				winampLifePickUP = lifePickupSound.CreatePlayer();
+				winampLifePickUP.Volume = GameManager.Instance.SoundFXVol;
+				winampLifePickUP.PlaybackRate = 2.0f;
+			}
+			winampLifePickUP.Play();
+		}
+		
+		public void PlayGameOverMusic()
+		{
+			if (bgmGameOver == null)
+			{
+				//setup bgm 
+				bgmGameOver = new Bgm("/Application/Audio/LevelOneBackGround.mp3"); //mp3 only
+		
+			}
+			if(bgmPlayGameOverMusic == null)
+			{
+				bgmPlayGameOverMusic = bgmGameOver.CreatePlayer();
+				bgmPlayGameOverMusic.Volume = GameManager.Instance.MusicVol;
+				bgmPlayGameOverMusic.Loop = true;
+			}
+			bgmPlayGameOverMusic.Play();
+		}
+		
+		/*public void PlayGameOverMusic()
+		{
+			if (bgmGameOver == null)
+			{
+				bgmGameOver = new Bgm("/Application/Audio/GameOver.mp3"); //mp3 only
+			}
+			if(bgmPlayGameOverMusic == null)
+			{
+				bgmPlayGameOverMusic = bgmGameOver.CreatePlayer();
+				bgmPlayGameOverMusic.Volume = GameManager.Instance.MusicVol;
+				bgmPlayGameOverMusic.Loop = true;
+			}
+			bgmPlayGameOverMusic.Play();
+		}*/
+		
 		public void StopLazerSound()
 		{
 			winamp.Stop();
@@ -183,9 +182,7 @@ namespace FlappyBird
 		{
 			if (bgmLvl1 == null)
 			{
-				//setup bgm 
 				bgmLvl1 = new Bgm("/Application/Audio/LevelOneBackGround.mp3"); //mp3 only
-		
 			}
 			if(bgmPlayerLvl1 == null)
 			{
@@ -195,18 +192,31 @@ namespace FlappyBird
 			}
 			bgmPlayerLvl1.Play();
 		}
+				
+		public void PlayLazerSound()
+		{
+			if(winamp == null)
+			{
+				//set up fx
+				LazerSound = new Sound("/Application/Audio/Lazer1.wav");//waw only
+				winamp = LazerSound.CreatePlayer();
+				winamp.Volume = GameManager.Instance.SoundFXVol;
+				winamp.PlaybackRate = 2.0f;
+			}
+			winamp.Play();
+		}
 		
 		public void PlayRocketLaunchSound()
 		{
-			if( winampFireAsteroid == null)
+			if( winampFireRocket == null)
 			{
 				//set up fx
 				rocketFiredSound = new Sound("/Application/Audio/rocketLaunch.wav");//waw only
-				winampFireAsteroid = rocketFiredSound.CreatePlayer();
-				winampFireAsteroid.Volume = GameManager.Instance.SoundFXVol;
-				winampFireAsteroid.PlaybackRate = 2.0f;
+				winampFireRocket = rocketFiredSound.CreatePlayer();
+				winampFireRocket.Volume = GameManager.Instance.SoundFXVol;
+				winampFireRocket.PlaybackRate = 2.0f;
 			}
-				winampFireAsteroid.Play();
+			winampFireRocket.Play();
 		}
 		
 		public void PlayShipHitSound()

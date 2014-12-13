@@ -13,7 +13,7 @@ namespace FlappyBird
 	{
 			
 		private SpriteUV sprite;
-		private TextureInfo textureInfo = new TextureInfo("/Application/textures/asteroid.png");
+		private TextureInfo textureInfo = new TextureInfo("/Application/textures/newImprovedAsteroid.png");
 	    private TextureInfo explodeInfo = new TextureInfo("/Application/textures/explosion.png");
 		private bool disposeOf = false;
 		private Random rand; 
@@ -27,16 +27,15 @@ namespace FlappyBird
 		public Asteroid (Scene scene)
 		{
 			audio = new AudioManager();
-			sprite	 		= new SpriteUV();
+			//sprite	 		= new SpriteUV();
 			sprite 			= new SpriteUV(textureInfo);	
 			sprite.Quad.S 	= textureInfo.TextureSizef;
-			sprite.Scale = new Vector2(0.2f);	
 			movementSpeed = 8.5f;
-			scene.AddChild(sprite);
 			lowY = 10;
 			highY = 500;
 			asteroidAmount = 10;
 			sprite.Position = new Vector2(-300.0f, -300.0f);// spawn the first ones off screen
+			scene.AddChild(sprite);
 		}
 		public void setAlive(bool peanut)
 		{

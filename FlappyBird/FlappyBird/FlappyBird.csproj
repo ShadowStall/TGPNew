@@ -48,7 +48,6 @@
     <Compile Include="TimeManager.cs" />
     <Compile Include="RandomNumberGenerator.cs" />
     <Compile Include="AudioManager.cs" />
-    <Compile Include="SpriteSheet.cs" />
     <Compile Include="GameManager.cs" />
     <Compile Include="MenuScene.cs" />
     <Compile Include="SceneManager.cs" />
@@ -58,7 +57,6 @@
     <Compile Include="LevelOne.cs" />
     <Compile Include="ScoreHelper.cs" />
     <Compile Include="Pickups.cs" />
-    <Compile Include="AudioManagerSingleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -110,5 +108,7 @@
     <Content Include="Audio\MenuScreenBackgroundMusic.mp3" />
     <Content Include="Audio\LevelOneBackGround.mp3" />
     <Content Include="Audio\GameOver.mp3" />
+    <Content Include="textures\asteroid.jpg" />
+    <Content Include="textures\newImprovedAsteroid.png" />
   </ItemGroup>
 </Project>

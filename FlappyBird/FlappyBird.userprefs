@@ -1,5 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\LevelOne.cs">
     <Files>
       <File FileName="FlappyBird\MenuScene.cs" Line="117" Column="36" />
@@ -28,11 +29,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+=======
+  <MonoDevelop.Ide.Workbench />
+>>>>>>> origin/master
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="FlappyBird\AsteroidManager.cs" line="95" offsetX="581" offsetY="1581" expression="asteroidYPos" liveUpdate="False" />
-    <Watch file="FlappyBird\AudioManager.cs" line="46" offsetX="557" offsetY="765" expression="bgmMainMenu" liveUpdate="False" />
-  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

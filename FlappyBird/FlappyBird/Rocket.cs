@@ -22,7 +22,7 @@ namespace FlappyBird
 		
 		public Rocket (Scene scene)
 		{
-			textureInfo  = new TextureInfo("/Application/textures/rocket.png");
+			textureInfo  = new TextureInfo("/Application/textures/Rocket.png");
 			sprite	 		= new SpriteUV();
 			sprite 			= new SpriteUV(textureInfo);	
 			sprite.Quad.S 	= textureInfo.TextureSizef;
